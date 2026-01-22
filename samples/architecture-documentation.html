@@ -1,0 +1,138 @@
+---
+layout: default
+title: Architecture Documentation | Matthew Fong
+description: SageMaker HyperPod task governance documentation for enterprise-scale AI/ML cluster management.
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Architecture Documentation</h1>
+    <p class="lead">
+      Enterprise cluster management documentation for SageMaker HyperPod—helping
+      administrators govern massive AI/ML workloads across distributed infrastructure.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role:</span>
+      <span>Primary Author</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Audience:</span>
+      <span>Enterprise Administrators, MLOps Engineers</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Launch:</span>
+      <span>AWS re:Invent (major conference)</span>
+    </div>
+  </div>
+
+  <h2>The Challenge</h2>
+  <p>
+    Enterprise organizations running large-scale AI/ML training workloads need sophisticated
+    tools to manage compute resources across distributed clusters. SageMaker HyperPod task
+    governance enables administrators to control how training jobs are scheduled, prioritized,
+    and allocated across GPU-intensive infrastructure.
+  </p>
+  <p>
+    This documentation required explaining complex distributed systems concepts—task scheduling,
+    resource allocation policies, GPU partition quotas—to administrators who may have varying
+    levels of familiarity with Kubernetes and cluster management.
+  </p>
+
+  <h2>My Approach</h2>
+  <ul>
+    <li><strong>Rapid domain learning:</strong> Deep-dived into a topic I was initially
+    unfamiliar with on a tight timeline, building reliable relationships with the HyperPod
+    team to understand the system architecture.</li>
+    <li><strong>PM and engineering partnership:</strong> Worked closely with product managers
+    to understand the user personas and their needs, then collaborated with engineers to
+    ensure technical accuracy of complex administrative procedures.</li>
+    <li><strong>Conference deadline:</strong> Delivered high-quality documentation ready for
+    AWS re:Invent, one of the largest cloud computing conferences.</li>
+    <li><strong>Task-oriented structure:</strong> Organized content around what administrators
+    actually need to do, not just what the features are.</li>
+  </ul>
+
+  <h2>Documentation Structure</h2>
+  <p>I designed a task-oriented architecture that matches administrator workflows:</p>
+  <ul>
+    <li><strong>Task governance</strong> — Overview and concepts
+      <ul>
+        <li>Setup
+          <ul>
+            <li>Dashboard setup — Monitoring interface configuration</li>
+            <li>Task governance setup — Initial configuration</li>
+          </ul>
+        </li>
+        <li>Dashboard — Real-time monitoring and insights</li>
+        <li>Tasks
+          <ul>
+            <li>Scheduling — Job queue management</li>
+          </ul>
+        </li>
+        <li>Policies
+          <ul>
+            <li>Create policies — Define governance rules</li>
+            <li>Edit policies — Modify existing rules</li>
+            <li>Delete policies — Clean up unused policies</li>
+            <li>Compute allocation
+              <ul>
+                <li>GPU partition quota — Hardware resource limits</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Example commands — Ready-to-use CLI examples</li>
+        <li>Troubleshoot — Common issues and solutions</li>
+        <li>Attribution — Credits and references</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>What This Demonstrates</h4>
+    <p>
+      Ability to quickly learn complex technical domains, document enterprise-scale distributed
+      systems, work effectively under deadline pressure, and structure documentation around
+      user tasks rather than product features.
+    </p>
+  </div>
+
+  <h2>Key Concepts Explained</h2>
+  <p>The documentation had to make several complex concepts accessible:</p>
+  <ul>
+    <li><strong>Task scheduling in distributed environments:</strong> How jobs are queued,
+    prioritized, and assigned to compute nodes</li>
+    <li><strong>Policy-based governance:</strong> Creating rules that automatically enforce
+    resource limits and access controls</li>
+    <li><strong>GPU partition quotas:</strong> Allocating fractional GPU resources across
+    teams and workloads</li>
+    <li><strong>EKS integration:</strong> How HyperPod task governance works with
+    Amazon Elastic Kubernetes Service</li>
+  </ul>
+
+  <h2>View the Live Documentation</h2>
+  <div class="external-link-box">
+    <h4>SageMaker HyperPod Task Governance</h4>
+    <p>Complete documentation for enterprise cluster management</p>
+    <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-governance.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="info-box">
+    <h4>Note on Live Documentation</h4>
+    <p>
+      As with all actively maintained documentation, these pages may have been updated by
+      other contributors since original publication. The structure and approach I established
+      continue to serve as the foundation for this documentation node.
+    </p>
+  </div>
+</article>

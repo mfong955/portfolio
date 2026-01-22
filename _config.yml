@@ -1,0 +1,43 @@
+# Site settings
+title: Matthew Fong, PhD
+description: Technical Writer specializing in AI/ML documentation with a background in physics research
+author: Matthew Fong
+email: matthewwf2001@gmail.com
+baseurl: "" # subpath of your site, e.g. /blog
+url: "https://mfong955.github.io/technical-writing-examples"
+
+# Social links
+linkedin: https://www.linkedin.com/in/matthew-w-fong/
+github: https://github.com/mfong955
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Theme settings
+sass:
+  style: compressed
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - project
+  - ai_system
+
+# Collections
+collections:
+  samples:
+    output: true
+    permalink: /samples/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"

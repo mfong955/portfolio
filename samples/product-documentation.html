@@ -1,0 +1,129 @@
+---
+layout: default
+title: Product Documentation | Matthew Fong
+description: SageMaker AI custom container documentation - end-to-end how-to guides for enterprise ML workflows.
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Product Documentation</h1>
+    <p class="lead">
+      Bring Your Own Image (BYOI) documentation for Amazon SageMaker AI—enabling
+      enterprise teams to use custom container environments in AWS's AI/ML platform.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role:</span>
+      <span>Primary Author</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Audience:</span>
+      <span>ML Engineers, Data Scientists, Enterprise Administrators</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Type:</span>
+      <span>How-to Guide, Reference Documentation</span>
+    </div>
+  </div>
+
+  <h2>The Challenge</h2>
+  <p>
+    Enterprise administrators and ML engineers often need to standardize their development
+    environments across teams—specific Python versions, pre-installed libraries, security
+    configurations. Before this documentation existed, there was no comprehensive guide for
+    bringing custom Docker images into SageMaker AI Studio or SageMaker Unified Studio.
+  </p>
+  <p>
+    I authored the complete documentation node from scratch for both platforms, covering
+    everything from image specifications to advanced optimization techniques.
+  </p>
+
+  <h2>My Approach</h2>
+  <ul>
+    <li><strong>Hands-on testing:</strong> I worked through every workflow myself, often with
+    a more basic setup than the engineering team, which helped me identify edge cases and
+    common pitfalls users would encounter.</li>
+    <li><strong>Engineering collaboration:</strong> Found issues in the original workflow
+    examples and proposed solutions. Engineering and I iterated together to create the most
+    efficient, error-free how-to guides.</li>
+    <li><strong>Cross-service strategy:</strong> Coordinated with the SageMaker Unified Studio
+    team to handle overlapping content while serving each platform's unique requirements.</li>
+    <li><strong>AI-assisted validation:</strong> Used AI assistance to troubleshoot issues
+    in workflow examples, finding solutions that weren't immediately obvious from
+    engineering's reference environment.</li>
+  </ul>
+
+  <h2>Documentation Structure</h2>
+  <p>I designed an information architecture that guides users from basic concepts to advanced optimization:</p>
+  <ul>
+    <li><strong>Bring your own image (BYOI)</strong> — Overview and use cases
+      <ul>
+        <li>Image specifications — Technical requirements</li>
+        <li>How to BYOI — Step-by-step workflows
+          <ul>
+            <li>Create a custom image and push to Amazon ECR</li>
+            <li>Attach your custom image to your domain</li>
+            <li>Update container configuration</li>
+          </ul>
+        </li>
+        <li>Launch a custom image in Studio</li>
+        <li>View your custom image details</li>
+        <li>Speed up container startup with SOCI — Advanced optimization
+          <ul>
+            <li>Permissions for SOCI indexing</li>
+            <li>Create SOCI indexes with nerdctl and SOCI CLI example</li>
+            <li>Integrate SOCI-indexed images with Studio example</li>
+          </ul>
+        </li>
+        <li>Detach and clean up custom image resources</li>
+      </ul>
+    </li>
+    <li><strong>Lifecycle configurations</strong> — Related automation</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>What This Demonstrates</h4>
+    <p>
+      Technical depth in AI/ML containerization workflows, ability to structure complex
+      how-to content, developer empathy (testing from a user's perspective), and effective
+      cross-team collaboration with engineering.
+    </p>
+  </div>
+
+  <h2>View the Live Documentation</h2>
+
+  <div class="external-link-box">
+    <h4>SageMaker AI Documentation</h4>
+    <p>Complete BYOI documentation for SageMaker AI Studio</p>
+    <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-updated-byoi.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="external-link-box">
+    <h4>SageMaker Unified Studio Documentation</h4>
+    <p>Adapted documentation for the Unified Studio platform</p>
+    <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/byoi.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="info-box">
+    <h4>Note on Live Documentation</h4>
+    <p>
+      As with all actively maintained documentation, these pages may have been updated by
+      other contributors since original publication. The core structure and approach I
+      established remain the foundation of these documentation nodes.
+    </p>
+  </div>
+</article>

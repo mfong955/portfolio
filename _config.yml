@@ -3,8 +3,8 @@ title: Matthew Fong, PhD
 description: Technical Writer specializing in AI/ML documentation with a background in physics research
 author: Matthew Fong
 email: matthewwf2001@gmail.com
-baseurl: "" # subpath of your site, e.g. /blog
-url: "https://mfong955.github.io/technical-writing-examples"
+baseurl: "/technical-writing-examples" # subpath of your site
+url: "https://mfong955.github.io"
 
 # Social links
 linkedin: https://www.linkedin.com/in/matthew-w-fong/
@@ -27,12 +27,7 @@ exclude:
   - vendor
   - project
   - ai_system
-
-# Collections
-collections:
-  samples:
-    output: true
-    permalink: /samples/:name/
+  - DEPLOY.md
 
 # Defaults
 defaults:

@@ -11,9 +11,9 @@ A portfolio website showcasing technical writing samples, built with Jekyll and 
 This portfolio demonstrates technical writing expertise across multiple domains:
 
 - **Product Documentation** - AWS SageMaker AI custom container documentation
+- **Process & Impact** - Cross-functional documentation improvements with AWS-wide impact
 - **Visual Communication** - Publication-quality figures from peer-reviewed astrophysics research
 - **Architecture Documentation** - System design documentation for ML pipelines
-- **Process & Impact** - Cross-functional documentation improvements with AWS-wide impact
 - **AI Tools** - Custom AI-powered documentation workflows
 
 ---
@@ -23,22 +23,6 @@ This portfolio demonstrates technical writing expertise across multiple domains:
 - **Static Site Generator:** Jekyll
 - **Hosting:** GitHub Pages
 - **Design:** Custom CSS with Anthropic-inspired light theme
-
----
-
-## Local Development
-
-### Prerequisites
-- Ruby 2.7+
-- Bundler
-
-### Setup
-```bash
-bundle install
-bundle exec jekyll serve
-```
-
-Visit `http://localhost:4000/technical-writing-examples/` to view locally.
 
 ---
 

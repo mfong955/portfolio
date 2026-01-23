@@ -73,7 +73,7 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
   <h3>How It Worked</h3>
   <p>
     I built a multi-stage AI pipeline using Amazon Q, LLMs, and MCP (Model Context Protocol) that
-    automated the initial to post-review drafting process in a context-window engineered:
+    automated the drafting process from initial draft through post-review revisions:
   </p>
   <ul>
     <li><strong>Context ingestion:</strong> System reads and understands source documents
@@ -82,7 +82,7 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
     source documents to catch hallucinations</li>
     <li><strong>Editorial review:</strong> Applies top AWS style guide rules and flags potential
     issues for human review</li>
-    <li><strong>Feedback integration (Quip):</strong> Writes to quip, and after review, 
+    <li><strong>Feedback integration (Quip):</strong> Writes to Quip, and after review,
       incorporates reviewer comments, learns from corrections, and creates new drafts with comment references</li>
     <li><strong>Structured output (XML):</strong> Generates documentation following AWS's
     information architecture, style guidelines, and formatting</li>
@@ -115,7 +115,7 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
     <li><strong>Codebase navigation:</strong> Automatically locates relevant XML source
     files in the documentation repository</li>
     <li><strong>Action planning:</strong> Breaks down the ticket into discrete steps with
-    clear acceptance criteria, balancing short term fixes and longer-term impact</li>
+    clear acceptance criteria, balancing short-term fixes and longer-term impact</li>
     <li><strong>Multiple output modes:</strong> Can generate diff-style changes, direct
     source XML updates, or flagged sections for human review</li>
     <li><strong>Searchable flags:</strong> Inserts markers in output for easy location
@@ -181,7 +181,7 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
   <p>Building these tools required combining multiple skill sets:</p>
   <ul>
     <li><strong>LLM Integration:</strong> Which foundation models for which purposes, prompt engineering, context management</li>
-    <li><strong>MCP Protocol:</strong> Using tools that extend LLM's capabilities</li>
+    <li><strong>MCP Protocol:</strong> Using tools that extend LLM capabilities</li>
     <li><strong>Python Development:</strong> Automation scripts, API integrations, file processing</li>
     <li><strong>Workflow Design:</strong> Multi-stage pipelines with error handling and human-in-the-loop checkpoints</li>
     <li><strong>Documentation Domain Knowledge:</strong> Understanding what makes good documentation to train systems effectively</li>

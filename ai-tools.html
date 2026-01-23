@@ -19,7 +19,7 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
   <div class="sample-meta">
     <div class="meta-item">
       <span class="meta-label">Built with:</span>
-      <span>Claude, MCP Protocol, Python</span>
+      <span>Claude, LLMs, AI, MCP Protocol, Python</span>
     </div>
     <div class="meta-item">
       <span class="meta-label">Context:</span>
@@ -27,7 +27,7 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
     </div>
     <div class="meta-item">
       <span class="meta-label">Impact:</span>
-      <span>30%+ time savings, 80%+ adoption</span>
+      <span>Improving workflow efficiency and documentation quality, freeing up time for strategic work</span>
     </div>
   </div>
 
@@ -45,9 +45,9 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
 
   <h2 id="context">About These Tools</h2>
   <p>
-    At AWS, I didn't just write documentation—I built AI systems to make documentation
+    At AWS, I built AI systems to make documentation
     workflows faster and more consistent. These tools were developed for internal use and
-    deployed across the SageMaker AI documentation team.
+    (some) were shared across the AWS docs org.
   </p>
 
   <div class="info-box">
@@ -72,27 +72,27 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
 
   <h3>How It Worked</h3>
   <p>
-    I built a multi-stage AI pipeline using Claude and MCP (Model Context Protocol) that
-    automated the initial drafting process:
+    I built a multi-stage AI pipeline using Amazon Q, LLMs, and MCP (Model Context Protocol) that
+    automated the initial to post-review drafting process in a context-window engineered:
   </p>
   <ul>
     <li><strong>Context ingestion:</strong> System reads and understands source documents
-    (PRFAQs, engineering specs, API references)</li>
-    <li><strong>Structured output:</strong> Generates documentation following our team's
-    information architecture and style guidelines</li>
+    (PRFAQs, engineering specs, API references, etc.)</li>
     <li><strong>Fact-checking layer:</strong> Cross-references generated content against
     source documents to catch hallucinations</li>
-    <li><strong>Editorial review:</strong> Applies style guide rules and flags potential
+    <li><strong>Editorial review:</strong> Applies top AWS style guide rules and flags potential
     issues for human review</li>
-    <li><strong>Feedback integration:</strong> Incorporates reviewer comments and learns
-    from corrections</li>
+    <li><strong>Feedback integration (Quip):</strong> Writes to quip, and after review, 
+      incorporates reviewer comments, learns from corrections, and creates new drafts with comment references</li>
+    <li><strong>Structured output (XML):</strong> Generates documentation following AWS's
+    information architecture, style guidelines, and formatting</li>
   </ul>
 
   <h3>Results</h3>
   <ul>
-    <li><strong>30%+ reduction</strong> in time from initial draft to review-ready content</li>
+    <li>Reduction in time from initial draft to review-ready content and post-review draft</li>
     <li>Consistent application of style guidelines across all generated content</li>
-    <li>Reduced cognitive load on writers, allowing focus on technical accuracy and user needs</li>
+    <li>Reduced cognitive load on writers, allowing more time to focus on technical accuracy and user needs</li>
   </ul>
 
   <h2 id="ticket-workflow">Ticket Resolution Workflow</h2>
@@ -115,16 +115,17 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
     <li><strong>Codebase navigation:</strong> Automatically locates relevant XML source
     files in the documentation repository</li>
     <li><strong>Action planning:</strong> Breaks down the ticket into discrete steps with
-    clear acceptance criteria</li>
+    clear acceptance criteria, balancing short term fixes and longer-term impact</li>
     <li><strong>Multiple output modes:</strong> Can generate diff-style changes, direct
-    XML updates, or flagged sections for human review</li>
+    source XML updates, or flagged sections for human review</li>
     <li><strong>Searchable flags:</strong> Inserts markers in output for easy location
     of changes requiring attention</li>
   </ul>
 
   <h3>Results</h3>
   <ul>
-    <li>Reduced routine ticket resolution time significantly</li>
+    <li>Reduced routine simple ticket resolution time significantly</li>
+    <li>Helped identify longer-term underlying documentation issues</li>
     <li>Standardized approach to common documentation fixes</li>
     <li>Freed up writer time for more complex, high-value work</li>
   </ul>
@@ -134,8 +135,7 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
     <h4>Problem Solved</h4>
     <p>
       Performance review and promotion documentation requires synthesizing months of
-      accomplishments into structured narratives—a time-consuming process that most
-      people dread.
+      accomplishments into structured narratives—a deeply time-consuming process.
     </p>
   </div>
 
@@ -146,7 +146,7 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
   <ul>
     <li><strong>Accomplishment ingestion:</strong> Accepts unstructured notes, bullet
     points, and raw accomplishment data</li>
-    <li><strong>Format knowledge:</strong> Understands promotion document structures
+    <li><strong>Format knowledge:</strong> Uses company's promotion documents
     and evaluation criteria</li>
     <li><strong>Narrative generation:</strong> Transforms raw inputs into structured
     stories with clear impact statements</li>
@@ -156,11 +156,12 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
 
   <h2 id="training">AI Training Courses</h2>
   <p>
-    Beyond building tools, I created and taught AI training courses for AWS employees:
+    Beyond building tools, I created and taught AI training courses for AWS employees
+    for major AI initiatives:
   </p>
   <ul>
     <li><strong>Prompt engineering fundamentals:</strong> How to write effective prompts
-    for documentation tasks</li>
+    for documentation tasks and when and how to implement RAG</li>
     <li><strong>Tool development:</strong> Building custom AI workflows for specific
     use cases</li>
     <li><strong>Best practices:</strong> Quality control, fact-checking, and maintaining
@@ -179,8 +180,8 @@ description: AI-powered documentation tools built at AWS using Claude, MCP, and 
   <h2 id="skills">Technical Skills Demonstrated</h2>
   <p>Building these tools required combining multiple skill sets:</p>
   <ul>
-    <li><strong>LLM Integration:</strong> Claude API, prompt engineering, context management</li>
-    <li><strong>MCP Protocol:</strong> Building tools that extend Claude's capabilities</li>
+    <li><strong>LLM Integration:</strong> Which foundation models for which purposes, prompt engineering, context management</li>
+    <li><strong>MCP Protocol:</strong> Using tools that extend LLM's capabilities</li>
     <li><strong>Python Development:</strong> Automation scripts, API integrations, file processing</li>
     <li><strong>Workflow Design:</strong> Multi-stage pipelines with error handling and human-in-the-loop checkpoints</li>
     <li><strong>Documentation Domain Knowledge:</strong> Understanding what makes good documentation to train systems effectively</li>

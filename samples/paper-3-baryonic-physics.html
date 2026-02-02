@@ -1,0 +1,126 @@
+---
+layout: default
+title: "Impact of Baryonic Physics and Massive Neutrinos | Matthew Fong"
+description: "Sensitivity analysis of how non-dark-matter factors affect cosmological signals, using the BAHAMAS simulation suite and ray-tracing pipelines."
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>The Impact of Baryonic Physics and Massive Neutrinos</h1>
+    <p class="lead">
+      Investigating how non-dark-matter factors "noise up" cosmological signals
+      through synthetic catalog generation, ray-tracing pipelines, and sensitivity analysis
+      at scale.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Publication:</span>
+      <span>Monthly Notices of the Royal Astronomical Society (MNRAS), 2019</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Role:</span>
+      <span>First Author</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Simulation Suite:</span>
+      <span>BAHAMAS (BAryons and HAloes of MAssive Systems)</span>
+    </div>
+  </div>
+
+  <h2 id="paper">Read the Full Paper</h2>
+  <div class="external-link-box">
+    <h4>MNRAS Publication</h4>
+    <p>"The impact of baryonic physics and massive neutrinos on weak lensing peak statistics"</p>
+    <a href="https://arxiv.org/abs/1907.08609"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on arXiv &#8599;
+    </a>
+  </div>
+
+  <h2 id="summary">Summary</h2>
+  <p>
+    This paper investigated how non-dark-matter factors&mdash;specifically baryonic physics
+    (gas, stars, feedback processes) and massive neutrinos&mdash;affect the cosmological
+    signals that future surveys will use to measure the universe's properties. Using the
+    BAHAMAS simulation suite, I created synthetic observational catalogs through ray-tracing
+    to determine whether these factors would lead to biased scientific conclusions.
+  </p>
+
+  <h2 id="data-pipeline">Data Pipeline & Architecture</h2>
+  <p>
+    This project involved managing a complex, multi-stage simulation and analysis pipeline:
+  </p>
+  <ul>
+    <li><strong>Simulation suite management:</strong> BAHAMAS provides multiple simulation runs
+    with different physics configurations (dark-matter-only, with baryons, with neutrinos
+    of varying masses), enabling controlled comparisons</li>
+    <li><strong>Ray-tracing through light-cones:</strong> Tracing simulated photon paths through
+    the simulation volume to generate synthetic weak lensing maps, replicating how real
+    telescopes observe the universe</li>
+    <li><strong>Synthetic catalog generation:</strong> Converting ray-traced maps into mock
+    observational catalogs that mimic the properties of real survey data
+    (galaxy positions, shapes, noise characteristics)</li>
+    <li><strong>Aperture mass statistics:</strong> Computing peak statistics from the synthetic maps
+    to quantify the lensing signal in a way that is sensitive to cosmological parameters</li>
+    <li><strong>Sensitivity analysis:</strong> Comparing statistics across simulation configurations
+    to isolate the impact of each physical effect</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>Pipeline Architecture Significance</h4>
+    <p>
+      This is essentially a large-scale <strong>simulation-to-observation</strong> ETL pipeline
+      running on HPC systems. The ray-tracing component alone involves tracing billions of
+      light paths through a 3D simulation volume&mdash;a massively parallel computing problem.
+      Managing multiple simulation configurations and ensuring apples-to-apples comparisons
+      mirrors the challenges of A/B testing and controlled experiments in industry.
+    </p>
+  </div>
+
+  <h2 id="methodology">Statistical Methodology</h2>
+  <ul>
+    <li><strong>Aperture mass statistics:</strong> Filtering-based approach to extract lensing
+    signal at multiple angular scales, more robust than direct shear measurement for
+    peak identification</li>
+    <li><strong>Peak counting:</strong> Identifying and characterizing overdensities in the
+    lensing signal as a function of signal-to-noise threshold</li>
+    <li><strong>Covariance estimation:</strong> Computing the full covariance matrix of peak
+    counts across bins, accounting for cosmic variance and shot noise</li>
+    <li><strong>Bias quantification:</strong> Measuring the systematic shift in inferred
+    cosmological parameters when baryonic/neutrino effects are ignored</li>
+  </ul>
+
+  <h2 id="results">Key Results</h2>
+  <ul>
+    <li>Baryonic physics significantly suppresses weak lensing peak counts, particularly
+    at high signal-to-noise ratios</li>
+    <li>Massive neutrinos produce a distinct signature that is partially degenerate with
+    baryonic effects but can be distinguished with sufficient data quality</li>
+    <li>Ignoring these effects would lead to biased cosmological parameter estimates in
+    next-generation surveys, quantifying the systematic error budget</li>
+    <li>Provided guidance for future survey analysis pipelines on which physical effects
+    must be modeled to achieve target precision</li>
+  </ul>
+
+  <h2 id="skills">Skills Demonstrated</h2>
+  <div class="skills-tags">
+    <span class="skill-tag">Synthetic Catalog Generation</span>
+    <span class="skill-tag">Ray-tracing</span>
+    <span class="skill-tag">Sensitivity Analysis</span>
+    <span class="skill-tag">HPC Computing</span>
+    <span class="skill-tag">Aperture Mass Statistics</span>
+    <span class="skill-tag">BAHAMAS Simulations</span>
+    <span class="skill-tag">Covariance Estimation</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">LaTeX</span>
+    <span class="skill-tag">Pipeline Architecture</span>
+    <span class="skill-tag">Controlled Experiments</span>
+    <span class="skill-tag">Scientific Writing</span>
+  </div>
+</article>

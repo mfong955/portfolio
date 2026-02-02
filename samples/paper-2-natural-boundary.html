@@ -1,0 +1,202 @@
+---
+layout: default
+title: "A Natural Boundary of Dark Matter Haloes | Matthew Fong"
+description: "Discovery of a bias trough that marks the boundary where haloes deplete their environment, using large-scale N-body simulations and data science techniques."
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>A Natural Boundary of Dark Matter Haloes</h1>
+    <p class="lead">
+      Using large-scale cosmological N-body simulations to discover a "bias trough"
+      that marks the boundary where haloes deplete their environment&mdash;establishing
+      new physical scales that improve upon traditional models.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Publication:</span>
+      <span>Monthly Notices of the Royal Astronomical Society (MNRAS), 2020</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Role:</span>
+      <span>First Author</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Data Scale:</span>
+      <span>8+ billion particles from N-body cosmological simulations</span>
+    </div>
+  </div>
+
+  <h2 id="paper">Read the Full Paper</h2>
+  <div class="external-link-box">
+    <h4>MNRAS Publication</h4>
+    <p>"A natural boundary of dark matter haloes revealed around the minimum bias and maximum infall locations"</p>
+    <a href="https://arxiv.org/abs/2008.03477"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on arXiv &#8599;
+    </a>
+  </div>
+
+  <h2 id="summary">Summary</h2>
+  <p>
+    This paper used large-scale cosmological N-body simulations to discover a "bias trough"
+    that marks the boundary where dark matter haloes deplete their surrounding environment.
+    This discovery established new physical scales&mdash;the Inner Depletion Radius
+    and the characteristic depletion radius&mdash;that improve upon the traditional "virial radius"
+    used for decades in astrophysics.
+  </p>
+
+  <h2 id="data-pipeline">Data Pipeline</h2>
+  <ul>
+    <li><strong>Simulation data:</strong> N-body cosmological simulations containing 8+ billion dark matter
+    particles, tracking gravitational evolution of the universe</li>
+    <li><strong>Halo identification:</strong> Automated detection of gravitationally-bound structures (haloes)
+    within the simulation volume</li>
+    <li><strong>Property extraction:</strong> Computing mass, velocity, spin, shape, formation time, and
+    environmental density for each identified halo</li>
+    <li><strong>Bias profile computation:</strong> Calculating the ratio of local-to-average matter density
+    as a function of distance from each halo center</li>
+    <li><strong>Phase-space analysis:</strong> Extracting radial velocity distributions for particle populations
+    around haloes</li>
+  </ul>
+
+  <h2 id="methodology">Statistical & ML Methodology</h2>
+  <ul>
+    <li><strong>High-dimensional phase-space analysis:</strong> Examining particle distributions in position-velocity
+    space to identify physical boundaries</li>
+    <li><strong>Gaussian Process Regression:</strong> Non-parametric modeling of the characteristic depletion
+    radius as a function of multiple halo properties simultaneously</li>
+    <li><strong>Multi-parameter binning:</strong> Systematic analysis of bias profiles across 6 different
+    halo parameters, individually and in pairs</li>
+    <li><strong>Velocity profile modeling:</strong> Decomposing radial velocity distributions into infall
+    and splashback components to measure mass accretion rates</li>
+    <li><strong>Feature engineering:</strong> Identifying which combinations of halo properties most strongly
+    predict the depletion boundary location</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>Data Science Significance</h4>
+    <p>
+      This work is fundamentally a feature engineering and predictive modeling problem:
+      given a set of halo properties, can we predict the location of a physical boundary?
+      The Gaussian Process Regression approach allowed non-parametric modeling of complex,
+      non-linear relationships in high-dimensional parameter space.
+    </p>
+  </div>
+
+  <h2 id="data-visualization">Data Visualization</h2>
+  <p>
+    The figures in this paper demonstrate the ability to communicate multi-dimensional
+    statistical relationships through thoughtful visual design. Each figure was created
+    using Python (Matplotlib, Seaborn) with custom visualization pipelines.
+  </p>
+
+  <h3 id="figure-1">Figure 1: Multi-Parameter Bias Profiles</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/figure1-bias-profiles.png' | relative_url }}"
+         alt="Six-panel plot showing halo bias profiles as functions of radius, binned by different halo parameters including mass, velocity ratio, spin, shape, formation time, and environment density."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 1:</span> The halo bias profile as a function of radius,
+      binned by various halo parameters. Each panel shows the bias binned by a different parameter
+      (labeled top right). The ubiquitous trough visible across all panels defines a characteristic
+      "depletion boundary"&mdash;a key finding of the research.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Six-panel grid enables systematic comparison of how
+    different features (mass, velocity, spin, shape, formation time, environment) affect the
+    target variable (bias profile). Color gradients encode parameter binning. Log-scale axes
+    handle a large dynamic range. The horizontal anchor line at unity bias provides a consistent
+    reference across all panels.
+  </p>
+
+  <h3 id="figure-4">Figure 4: Two-Parameter Space Mapping</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/figure4-2d-parameter-space.png' | relative_url }}"
+         alt="Grid of 2D contour plots showing characteristic depletion radius values across different combinations of halo parameters, with contour lines and shaded regions indicating parameter distributions."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 4:</span> The characteristic depletion radius (<em>r</em><sub>cd</sub>)
+      for haloes binned by pairs of properties. Gray filled contours show the number density
+      distribution. Thin solid lines are measured values; thick transparent lines
+      are Gaussian Process Regression model predictions.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> This 6&times;6 matrix visualization is a systematic
+    feature interaction analysis. By overlaying measured values against Gaussian Process model
+    predictions, the figure directly communicates where the model captures the data well
+    and where residual complexity exists&mdash;a key diagnostic for model validation.
+  </p>
+
+  <h3 id="figure-8">Figure 8: Theory Illustration</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/figure8-theory-illustration.png' | relative_url }}"
+         alt="Illustration of halo accretion around the maximum inflow location, showing mass flow magnitudes and halo evolution from initial state to evolved state."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 8:</span> Illustration of halo accretion around the
+      maximum inflow location. Horizontal arrows represent mass flow magnitudes.
+      The evolution of the halo is shown by the transition from the solid black line
+      to the dashed red line.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> This conceptual diagram bridges quantitative results
+    and physical interpretation. It translates velocity field measurements into an intuitive
+    visual model of mass transport, making the mechanism behind the depletion boundary
+    accessible to readers from different specializations.
+  </p>
+
+  <h3 id="figure-9">Figure 9: Phase Space Dynamics</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/figure9-phase-space.png' | relative_url }}"
+         alt="Three-panel visualization showing scaled radial velocity distribution for different halo mass bins, with particle density shown as a color map and white contours marking isodensity levels."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 9:</span> The scaled radial velocity distribution
+      for three mass bins, showing 100 randomly selected haloes each. Color maps show particle
+      density; white curves mark isodensity contours. Vertical lines indicate key physical radii.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Phase-space density estimation using kernel-based methods
+    on millions of particle positions and velocities. The layered visualization (density colormap +
+    isodensity contours + reference lines) encodes multiple data dimensions simultaneously.
+    Mass-binned panels enable direct comparison of how the underlying distribution shifts
+    with the primary feature variable.
+  </p>
+
+  <div class="info-box">
+    <h4>Note on Figure Availability</h4>
+    <p>
+      If the figures are not displaying, they need to be extracted from the PDF and placed
+      in the <code>assets/images/figures/</code> directory. See the deployment instructions
+      for details.
+    </p>
+  </div>
+
+  <h2 id="skills">Skills Demonstrated</h2>
+  <div class="skills-tags">
+    <span class="skill-tag">N-body Simulations</span>
+    <span class="skill-tag">Bias Profiles</span>
+    <span class="skill-tag">Gaussian Process Regression</span>
+    <span class="skill-tag">Phase-space Analysis</span>
+    <span class="skill-tag">Feature Engineering</span>
+    <span class="skill-tag">Matplotlib</span>
+    <span class="skill-tag">Seaborn</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">LaTeX</span>
+    <span class="skill-tag">Data Visualization</span>
+    <span class="skill-tag">Velocity Profile Modeling</span>
+    <span class="skill-tag">Mass Accretion Rate</span>
+    <span class="skill-tag">Scientific Writing</span>
+  </div>
+</article>

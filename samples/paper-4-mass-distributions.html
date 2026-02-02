@@ -1,0 +1,119 @@
+---
+layout: default
+title: "Prospects for Mass Distributions | Matthew Fong"
+description: "Feasibility study for LSST/Rubin Observatory assessing whether new density profile models outperform the 20-year-old standard using synthetic lensing data."
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Prospects for Determining the Mass Distributions of Dark Matter Haloes</h1>
+    <p class="lead">
+      A feasibility study for next-generation telescopes, assessing whether a new
+      density profile model can outperform the 20-year-old standard&mdash;and what
+      data quality is needed to tell the difference.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Publication:</span>
+      <span>Monthly Notices of the Royal Astronomical Society (MNRAS), 2018</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Role:</span>
+      <span>First Author</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Future Survey:</span>
+      <span>LSST / Vera C. Rubin Observatory</span>
+    </div>
+  </div>
+
+  <h2 id="paper">Read the Full Paper</h2>
+  <div class="external-link-box">
+    <h4>MNRAS Publication</h4>
+    <p>"Prospects for determining the mass distributions of cluster-sized haloes using weak gravitational lensing"</p>
+    <a href="https://arxiv.org/abs/1710.07886"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on arXiv &#8599;
+    </a>
+  </div>
+
+  <h2 id="summary">Summary</h2>
+  <p>
+    This paper was a <strong>feasibility study</strong> for the Large Synoptic Survey Telescope
+    (LSST, now Vera C. Rubin Observatory). The core question: will next-generation survey data
+    have sufficient quality to distinguish between the traditional NFW density profile model
+    (used for 20+ years) and the newer DK profile (which incorporates the physics of mass
+    accretion)? This is fundamentally a <strong>model selection and forecasting</strong> problem.
+  </p>
+
+  <h2 id="data-pipeline">Data Pipeline</h2>
+  <ul>
+    <li><strong>Simulation source:</strong> Cosmo-OWLS simulations providing realistic halo density
+    profiles with full baryonic physics</li>
+    <li><strong>Synthetic lensing generation:</strong> Creating mock weak lensing measurements
+    with realistic noise properties matching LSST specifications (source density, shape noise,
+    photometric redshift errors)</li>
+    <li><strong>Profile fitting:</strong> Fitting both NFW and DK models to the synthetic data using
+    Bayesian parameter estimation</li>
+    <li><strong>Signal-to-noise forecasting:</strong> Computing how profile distinguishability scales with
+    survey depth, source density, and halo mass</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>Industry Parallel: Technology Evaluation</h4>
+    <p>
+      This paper is structurally a <strong>technology evaluation / competitive analysis</strong>:
+      given a new "product" (DK profile) and a market standard (NFW profile), under what
+      conditions does the new product demonstrably outperform? The methodology&mdash;synthetic
+      data generation, controlled comparison, sensitivity to deployment conditions&mdash;maps
+      directly to product feasibility studies and A/B test design.
+    </p>
+  </div>
+
+  <h2 id="methodology">Statistical Methodology</h2>
+  <ul>
+    <li><strong>Bayesian model comparison:</strong> Computing Bayesian evidence for NFW vs. DK profiles
+    to determine which model is preferred by the data</li>
+    <li><strong>Signal-to-noise forecasting:</strong> Predicting the survey conditions under which the
+    DK profile becomes statistically distinguishable from NFW</li>
+    <li><strong>Parameter degeneracy analysis:</strong> Identifying which DK profile parameters are
+    well-constrained vs. degenerate with observational uncertainties</li>
+    <li><strong>Parameterized accretion modeling:</strong> The DK profile encodes the mass accretion
+    history of haloes through its outer slope parameter, providing physical information
+    not available from NFW fits</li>
+  </ul>
+
+  <h2 id="results">Key Results</h2>
+  <ul>
+    <li>LSST-quality data will be sufficient to distinguish DK from NFW profiles for massive
+    galaxy clusters</li>
+    <li>The outer regions of halo profiles (beyond the virial radius) contain the most
+    discriminating power between models</li>
+    <li>Accretion rate information can be extracted from DK profile fits, providing physical
+    insights not available from traditional NFW analysis</li>
+    <li>Identified the minimum signal-to-noise thresholds needed for robust model selection,
+    informing survey strategy and analysis pipeline design</li>
+  </ul>
+
+  <h2 id="skills">Skills Demonstrated</h2>
+  <div class="skills-tags">
+    <span class="skill-tag">Feasibility Studies</span>
+    <span class="skill-tag">Model Selection</span>
+    <span class="skill-tag">Bayesian Evidence</span>
+    <span class="skill-tag">S/N Forecasting</span>
+    <span class="skill-tag">LSST / Rubin Observatory</span>
+    <span class="skill-tag">Cosmo-OWLS Simulations</span>
+    <span class="skill-tag">Parameterized Modeling</span>
+    <span class="skill-tag">Synthetic Data Generation</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">LaTeX</span>
+    <span class="skill-tag">Competitive Analysis</span>
+    <span class="skill-tag">Scientific Writing</span>
+  </div>
+</article>

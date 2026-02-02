@@ -1,0 +1,131 @@
+<aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav" aria-label="Site navigation">
+    <ul class="nav-list nav-list--root">
+      {% for item in site.data.navigation %}
+        {% assign is_active = false %}
+        {% assign is_open = false %}
+        {% if page.url == item.url %}
+          {% assign is_active = true %}
+        {% endif %}
+
+        {% if item.children %}
+          {% for child in item.children %}
+            {% if page.url == child.url %}
+              {% assign is_open = true %}
+            {% endif %}
+            {% if child.children %}
+              {% for grandchild in child.children %}
+                {% if page.url == grandchild.url %}
+                  {% assign is_open = true %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        <li class="nav-item{% if is_active %} nav-item--active{% endif %}{% if is_open %} nav-item--open{% endif %}">
+          {% if item.children %}
+            <div class="nav-item-row">
+              <a href="{{ item.url | relative_url }}" class="nav-link{% if is_active %} nav-link--active{% endif %}">{{ item.title }}</a>
+              <button class="nav-toggle" aria-expanded="{{ is_open }}" aria-label="Toggle {{ item.title }}">
+                <svg class="nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <ul class="nav-list nav-list--children"{% unless is_open %} hidden{% endunless %}>
+              {% for child in item.children %}
+                {% assign child_active = false %}
+                {% assign child_open = false %}
+                {% if page.url == child.url %}
+                  {% assign child_active = true %}
+                {% endif %}
+
+                {% if child.children %}
+                  {% for grandchild in child.children %}
+                    {% if page.url == grandchild.url %}
+                      {% assign child_open = true %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+
+                <li class="nav-item{% if child_active %} nav-item--active{% endif %}{% if child_open %} nav-item--open{% endif %}">
+                  {% if child.children %}
+                    <div class="nav-item-row">
+                      <a href="{{ child.url | relative_url }}" class="nav-link{% if child_active %} nav-link--active{% endif %}">{{ child.title }}</a>
+                      <button class="nav-toggle" aria-expanded="{{ child_open }}" aria-label="Toggle {{ child.title }}">
+                        <svg class="nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <ul class="nav-list nav-list--grandchildren"{% unless child_open %} hidden{% endunless %}>
+                      {% for grandchild in child.children %}
+                        {% assign gc_active = false %}
+                        {% if page.url == grandchild.url %}
+                          {% assign gc_active = true %}
+                        {% endif %}
+                        <li class="nav-item{% if gc_active %} nav-item--active{% endif %}">
+                          <a href="{{ grandchild.url | relative_url }}" class="nav-link{% if gc_active %} nav-link--active{% endif %}">{{ grandchild.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    <a href="{{ child.url | relative_url }}" class="nav-link{% if child_active %} nav-link--active{% endif %}">{{ child.title }}</a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <a href="{{ item.url | relative_url }}" class="nav-link{% if is_active %} nav-link--active{% endif %}">{{ item.title }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  // Sidebar toggle for expand/collapse
+  document.querySelectorAll('.nav-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var item = this.closest('.nav-item');
+      var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren');
+      if (!childList) return;
+
+      var isHidden = childList.hasAttribute('hidden');
+      if (isHidden) {
+        childList.removeAttribute('hidden');
+        this.setAttribute('aria-expanded', 'true');
+        item.classList.add('nav-item--open');
+      } else {
+        childList.setAttribute('hidden', '');
+        this.setAttribute('aria-expanded', 'false');
+        item.classList.remove('nav-item--open');
+      }
+    });
+  });
+
+  // Mobile sidebar toggle
+  var sidebarToggle = document.getElementById('sidebar-toggle');
+  var sidebar = document.getElementById('sidebar');
+  var sidebarOverlay = document.getElementById('sidebar-overlay');
+
+  if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', function() {
+      sidebar.classList.toggle('sidebar--open');
+      if (sidebarOverlay) sidebarOverlay.classList.toggle('sidebar-overlay--visible');
+      var isOpen = sidebar.classList.contains('sidebar--open');
+      this.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', function() {
+      sidebar.classList.remove('sidebar--open');
+      this.classList.remove('sidebar-overlay--visible');
+      if (sidebarToggle) sidebarToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+</script>

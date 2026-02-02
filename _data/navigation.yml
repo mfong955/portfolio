@@ -1,0 +1,29 @@
+- title: Home
+  url: /
+- title: Technical Writing Samples
+  url: /samples/technical-writing-samples.html
+  children:
+    - title: AWS
+      url: /samples/aws.html
+      children:
+        - title: Product Documentation
+          url: /samples/product-documentation.html
+        - title: Architecture Documentation
+          url: /samples/architecture-documentation.html
+        - title: Process & Impact
+          url: /samples/process-impact.html
+    - title: First-author Astrophysics Papers
+      url: /samples/astrophysics.html
+      children:
+        - title: "Depletion Radius Measurement"
+          url: /samples/paper-1-depletion-radius.html
+        - title: "Natural Boundary of Dark Matter Haloes"
+          url: /samples/paper-2-natural-boundary.html
+        - title: "Impact of Baryonic Physics"
+          url: /samples/paper-3-baryonic-physics.html
+        - title: "Prospects for Mass Distributions"
+          url: /samples/paper-4-mass-distributions.html
+- title: AI Tools
+  url: /ai-tools.html
+- title: About
+  url: /about.html

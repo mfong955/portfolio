@@ -1,0 +1,117 @@
+---
+layout: default
+title: "First Measurement of the Depletion Radius | Matthew Fong"
+description: "First-ever empirical measurement of the characteristic depletion radius using real-world weak lensing data from DESI Legacy Surveys."
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>First Measurement of the Characteristic Depletion Radius</h1>
+    <p class="lead">
+      The first-ever empirical measurement of the "depletion radius" using real-world
+      weak lensing data, validating simulation predictions against observational data
+      to redefine how we understand the boundaries of dark matter haloes.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Publication:</span>
+      <span>Monthly Notices of the Royal Astronomical Society (MNRAS), 2022</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Role:</span>
+      <span>First Author</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Data Source:</span>
+      <span>DESI Legacy Imaging Surveys (DR8/DR9)</span>
+    </div>
+  </div>
+
+  <h2 id="paper">Read the Full Paper</h2>
+  <div class="external-link-box">
+    <h4>MNRAS Publication</h4>
+    <p>"First measurement of the characteristic depletion radius of dark matter haloes"</p>
+    <a href="https://arxiv.org/abs/2201.02202"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on arXiv &#8599;
+    </a>
+  </div>
+
+  <h2 id="summary">Summary</h2>
+  <p>
+    This paper conducted the first-ever empirical measurement of the "depletion radius"&mdash;a
+    physical boundary of dark matter haloes previously identified only in simulations
+    (see <a href="{{ '/samples/paper-2-natural-boundary.html' | relative_url }}">Paper 2</a>).
+    Using real-world observational data from the DESI Legacy Imaging Surveys, I validated
+    that the depletion radius exists in nature, not just in computational models.
+  </p>
+
+  <h2 id="data-pipeline">Data Pipeline & Architecture</h2>
+  <p>
+    The core technical challenge was designing a pipeline to cross-match massive halo
+    catalogs with source galaxy imaging data across different survey releases:
+  </p>
+  <ul>
+    <li><strong>Halo catalog:</strong> Galaxy group catalogs constructed from spectroscopic surveys,
+    providing halo mass estimates and positions</li>
+    <li><strong>Source imaging:</strong> DESI Legacy Imaging Surveys DR8 and DR9, providing
+    galaxy shape measurements for weak lensing analysis</li>
+    <li><strong>Cross-matching:</strong> Spatial matching of lens (halo) and source (background galaxy)
+    catalogs across survey footprints with careful selection criteria</li>
+    <li><strong>Shear estimation:</strong> Fourier_Quad pipeline for robust shape measurement,
+    converting galaxy ellipticities into gravitational shear estimates</li>
+    <li><strong>Stacking analysis:</strong> Signal averaging across thousands of halos to extract
+    the weak lensing signal with sufficient signal-to-noise ratio</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>Pipeline Architecture Significance</h4>
+    <p>
+      This pipeline is essentially a large-scale ETL (Extract, Transform, Load) system:
+      ingesting data from multiple astronomical surveys, transforming it through statistical
+      processing stages, and producing validated scientific measurements. The cross-matching
+      and quality control requirements mirror challenges in enterprise data engineering.
+    </p>
+  </div>
+
+  <h2 id="methodology">Statistical Methodology</h2>
+  <ul>
+    <li><strong>Stacked weak lensing:</strong> Combining signals from individual halos to build
+    statistically significant radial profiles</li>
+    <li><strong>Fourier_Quad shear estimation:</strong> Fourier-space method for measuring
+    galaxy shapes, more robust than real-space approaches for noisy data</li>
+    <li><strong>Profile fitting:</strong> Fitting theoretical density profile models to the
+    observed lensing signal to extract characteristic radii</li>
+    <li><strong>Statistical validation:</strong> Bootstrap resampling, systematic error estimation,
+    and comparison with simulation-based predictions</li>
+  </ul>
+
+  <h2 id="results">Key Results</h2>
+  <ul>
+    <li>Confirmed the existence of the depletion radius in observational data for the first time</li>
+    <li>Measured depletion radius values consistent with N-body simulation predictions</li>
+    <li>Demonstrated that the depletion radius provides physical information beyond traditional
+    halo boundary definitions (virial radius, splashback radius)</li>
+    <li>Validated the theoretical framework established in Paper 2 using independent observational evidence</li>
+  </ul>
+
+  <h2 id="skills">Skills Demonstrated</h2>
+  <div class="skills-tags">
+    <span class="skill-tag">Weak Gravitational Lensing</span>
+    <span class="skill-tag">DESI Legacy Surveys</span>
+    <span class="skill-tag">Fourier_Quad Pipeline</span>
+    <span class="skill-tag">Statistical Validation</span>
+    <span class="skill-tag">Cross-survey Data Matching</span>
+    <span class="skill-tag">Signal Processing</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">LaTeX</span>
+    <span class="skill-tag">Observational Astronomy</span>
+    <span class="skill-tag">Pipeline Architecture</span>
+  </div>
+</article>

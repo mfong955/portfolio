@@ -23,10 +23,20 @@
 <body>
   {% include header.html %}
 
-  <main class="main-content">
-    {{ content }}
-  </main>
+  <div class="site-layout">
+    {% include sidebar.html %}
+
+    <main class="main-content">
+      {{ content }}
+    </main>
+
+    <aside class="toc-sidebar" id="toc-sidebar"></aside>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
   {% include footer.html %}
+
+  <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
 </body>
 </html>

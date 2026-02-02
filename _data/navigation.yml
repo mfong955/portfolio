@@ -6,12 +6,16 @@
     - title: AWS
       url: /samples/aws.html
       children:
-        - title: Product Documentation
-          url: /samples/product-documentation.html
-        - title: Architecture Documentation
-          url: /samples/architecture-documentation.html
-        - title: Process & Impact
-          url: /samples/process-impact.html
+        - title: "Trusted Identity Propagation: Enterprise Identity"
+          url: /samples/trusted-identity-propagation.html
+        - title: "Remote Access: Local VS Code to Cloud"
+          url: /samples/remote-access-vscode.html
+        - title: "BYOI: Custom Container Environments"
+          url: /samples/byoi-custom-containers.html
+        - title: "HyperPod: Task Governance Architecture"
+          url: /samples/hyperpod-task-governance.html
+        - title: "Process & Impact: AWS-Wide Improvements"
+          url: /samples/aws-wide-process-improvements.html
     - title: First-author Astrophysics Papers
       url: /samples/astrophysics.html
       children:

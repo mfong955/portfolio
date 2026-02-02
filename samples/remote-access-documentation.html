@@ -1,0 +1,193 @@
+---
+layout: default
+title: Remote Access Documentation | Matthew Fong
+description: SageMaker AI Remote Access documentation - enabling local VS Code connections to cloud ML environments, the #1 requested feature at launch.
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Remote Access Documentation</h1>
+    <p class="lead">
+      Documentation for Amazon SageMaker AI's Remote Access feature—the #1 requested feature
+      at launch, enabling data scientists to connect their local VS Code to cloud-based
+      SageMaker Studio spaces.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role:</span>
+      <span>Primary Author</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Audience:</span>
+      <span>Data Scientists, ML Engineers, Platform Administrators</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Type:</span>
+      <span>Feature Launch Documentation, How-to Guide, Security Configuration</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Impact:</span>
+      <span>#1 Requested Feature, Major Product Launch</span>
+    </div>
+  </div>
+
+  <h2 id="live-docs">View the Live Documentation</h2>
+
+  <div class="external-link-box">
+    <h4>Remote Access Overview</h4>
+    <p>Connect your local VS Code to SageMaker Studio spaces</p>
+    <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/remote-access.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="external-link-box">
+    <h4>Set Up Remote Access (Administrator Guide)</h4>
+    <p>IAM permissions, security configuration, and advanced access control</p>
+    <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/remote-access-setup.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="external-link-box">
+    <h4>Set Up Local Visual Studio Code</h4>
+    <p>End-user setup guide for connecting local VS Code to Studio spaces</p>
+    <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/remote-access-local-vscode.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="info-box">
+    <h4>Note on Live Documentation</h4>
+    <p>
+      As with all actively maintained documentation, these pages may have been updated by
+      other contributors since original publication. The core structure and approach I
+      established remain the foundation of these documentation nodes.
+    </p>
+  </div>
+
+  <h2 id="challenge">The Challenge</h2>
+  <p>
+    Remote Access was the <strong>#1 requested feature</strong> from SageMaker customers at the time
+    of launch. Data scientists wanted to use their familiar local VS Code environment while
+    leveraging the compute power and managed infrastructure of SageMaker Studio spaces.
+  </p>
+  <p>
+    This was an incredibly complex feature to document because it involved:
+  </p>
+  <ul>
+    <li><strong>Multiple connection methods:</strong> Deep links from the SageMaker UI, AWS Toolkit
+    for VS Code integration, and direct SSH terminal connections</li>
+    <li><strong>Complex security architecture:</strong> IAM permissions, session management,
+    least privilege principles, and cross-service authorization</li>
+    <li><strong>Multiple audiences:</strong> End-users (data scientists) needed simple setup guides,
+    while administrators needed detailed security configuration documentation</li>
+    <li><strong>Advanced scenarios:</strong> Private subnet configurations with no internet access,
+    auto space filtering, and network-based constraints</li>
+  </ul>
+
+  <h2 id="approach">My Approach</h2>
+  <ul>
+    <li><strong>Audience-driven structure:</strong> Separated administrator setup (IAM, security)
+    from end-user setup (VS Code configuration) to serve each audience's needs without
+    overwhelming them with irrelevant information.</li>
+    <li><strong>Security-first documentation:</strong> Emphasized least privilege principles
+    throughout, with clear warnings about wildcard permissions and guidance on scoping
+    permissions to specific space ARNs.</li>
+    <li><strong>Progressive disclosure:</strong> Started with the simplest connection method
+    (deep links) and progressively introduced more complex options (AWS Toolkit, SSH terminal)
+    for users who needed them.</li>
+    <li><strong>Hands-on validation:</strong> Tested all three connection methods myself,
+    identifying edge cases and prerequisites that weren't obvious from engineering specs.</li>
+    <li><strong>Cross-platform considerations:</strong> Documented prerequisites for different
+    operating systems and shell environments (bash, PowerShell, cmd.exe).</li>
+  </ul>
+
+  <h2 id="structure">Documentation Structure</h2>
+  <p>I designed an information architecture that separates concerns while maintaining clear navigation:</p>
+  <ul>
+    <li><strong>Remote access</strong> — Overview and feature introduction
+      <ul>
+        <li>Set up remote access — Administrator guide
+          <ul>
+            <li>Advanced access control — Resource ARNs, tags, network constraints</li>
+            <li>Set up private subnet with no internet access</li>
+            <li>Set up auto space filtering</li>
+          </ul>
+        </li>
+        <li>Set up local Visual Studio Code — End-user guide
+          <ul>
+            <li>Connect to private subnet with no internet access</li>
+            <li>Filter your Studio spaces</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 id="technical-depth">Technical Depth</h2>
+  <p>
+    The documentation required deep understanding of several AWS services and security concepts:
+  </p>
+  <ul>
+    <li><strong>IAM policy structure:</strong> Documented three distinct permission methods
+    (deep link, AWS Toolkit, SSH terminal), each with different IAM requirements</li>
+    <li><strong>Session Manager integration:</strong> Explained how the StartSession API
+    enables secure connections without exposing SSH ports</li>
+    <li><strong>SSH ProxyCommand configuration:</strong> Provided shell-specific examples
+    for routing SSH connections through AWS Session Manager</li>
+    <li><strong>Resource-based access control:</strong> Showed how to scope permissions
+    using space ARNs, user profile tags, and network-based conditions</li>
+  </ul>
+
+  <h2 id="security-considerations">Security Documentation</h2>
+  <p>
+    A critical aspect of this documentation was helping administrators understand and
+    implement proper security controls:
+  </p>
+  <div class="info-box highlight">
+    <h4>Security Guidance Provided</h4>
+    <ul>
+      <li>Warnings about wildcard resource permissions and their risks</li>
+      <li>Examples of scoped IAM policies using specific space ARNs</li>
+      <li>Condition keys for restricting access by user profile</li>
+      <li>Network-based constraints for enterprise environments</li>
+      <li>Guidance on attaching policies to the correct IAM identity (user vs. execution role)</li>
+    </ul>
+  </div>
+
+  <h2 id="impact">Impact</h2>
+  <p>
+    Being trusted with the documentation for the #1 requested feature was a significant
+    responsibility. The documentation needed to:
+  </p>
+  <ul>
+    <li>Enable successful adoption of a highly anticipated feature</li>
+    <li>Reduce support burden by addressing common setup issues proactively</li>
+    <li>Maintain AWS's security standards while making the feature accessible</li>
+    <li>Serve both technical and less technical audiences effectively</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>What This Demonstrates</h4>
+    <p>
+      Ability to document complex, multi-service features with security implications.
+      Experience structuring documentation for multiple audiences (administrators vs. end-users).
+      Deep understanding of IAM, SSH, and cloud security concepts. Trusted with high-visibility
+      feature launches that directly impact customer adoption and satisfaction.
+    </p>
+  </div>
+</article>

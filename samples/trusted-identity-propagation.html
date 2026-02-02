@@ -1,0 +1,198 @@
+---
+layout: default
+title: Trusted Identity Propagation Documentation | Matthew Fong
+description: SageMaker AI Trusted Identity Propagation documentation - enterprise identity management across AWS services for fine-grained access control and auditing.
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Trusted Identity Propagation with Studio</h1>
+    <p class="lead">
+      Documentation for Amazon SageMaker AI's Trusted Identity Propagation feature—enabling
+      enterprise identity management across AWS services with fine-grained access control
+      and comprehensive auditing capabilities.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role:</span>
+      <span>Primary Author</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Audience:</span>
+      <span>Enterprise Administrators, Security Engineers, IAM Identity Center Administrators</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Type:</span>
+      <span>Architecture Documentation, Security Configuration, Integration Guides</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Impact:</span>
+      <span>Major Enterprise Feature, Cross-Service Integration</span>
+    </div>
+  </div>
+
+  <h2 id="live-docs">View the Live Documentation</h2>
+
+  <div class="external-link-box">
+    <h4>Trusted Identity Propagation Overview</h4>
+    <p>Enterprise identity management for SageMaker Studio</p>
+    <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/trustedidentitypropagation.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="external-link-box">
+    <h4>Architecture and Compatibility</h4>
+    <p>Technical architecture and service compatibility requirements</p>
+    <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/tip-architecture.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="external-link-box">
+    <h4>Connect with Other AWS Services</h4>
+    <p>Integration guides for S3 Access Grants, EMR, Redshift, Lake Formation, and Athena</p>
+    <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/tip-connect-services.html"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-primary">
+      View on AWS Docs ↗
+    </a>
+  </div>
+
+  <div class="info-box">
+    <h4>Note on Live Documentation</h4>
+    <p>
+      As with all actively maintained documentation, these pages may have been updated by
+      other contributors since original publication. The core structure and approach I
+      established remain the foundation of these documentation nodes.
+    </p>
+  </div>
+
+  <h2 id="challenge">The Challenge</h2>
+  <p>
+    Trusted Identity Propagation addresses a critical enterprise need: maintaining user identity
+    context as data scientists work across multiple AWS services. Before this feature, enterprises
+    faced significant challenges:
+  </p>
+  <ul>
+    <li><strong>Identity fragmentation:</strong> Users had to manage multiple IAM roles when
+    accessing different AWS services, losing their individual identity context</li>
+    <li><strong>Audit complexity:</strong> Tracking which specific user performed actions across
+    services was difficult when all actions appeared under shared execution roles</li>
+    <li><strong>Access control limitations:</strong> Fine-grained permissions based on user
+    attributes (like group membership) were hard to implement across service boundaries</li>
+    <li><strong>Cross-team coordination:</strong> Setting up the feature required collaboration
+    between SageMaker administrators and IAM Identity Center administrators</li>
+  </ul>
+
+  <h2 id="approach">My Approach</h2>
+  <ul>
+    <li><strong>Multi-audience documentation:</strong> Created separate paths for SageMaker
+    administrators and IAM Identity Center administrators, recognizing that setup requires
+    collaboration between different teams with different expertise.</li>
+    <li><strong>Architecture-first explanation:</strong> Started with clear architecture
+    documentation to help readers understand how identity context flows between services
+    before diving into configuration steps.</li>
+    <li><strong>Service-specific integration guides:</strong> Created dedicated pages for each
+    connected service (S3 Access Grants, EMR, EMR Serverless, Redshift Data API, Lake Formation,
+    Athena) with service-specific prerequisites and configuration.</li>
+    <li><strong>Security and compliance focus:</strong> Emphasized auditing capabilities with
+    CloudTrail integration, helping enterprises meet compliance requirements.</li>
+    <li><strong>Edge case documentation:</strong> Documented user background sessions and
+    other advanced scenarios that enterprise users would encounter.</li>
+  </ul>
+
+  <h2 id="structure">Documentation Structure</h2>
+  <p>I designed an information architecture that guides administrators through the complex setup process:</p>
+  <ul>
+    <li><strong>Trusted identity propagation</strong> — Overview and use cases
+      <ul>
+        <li>Architecture and compatibility — Technical architecture, prerequisites</li>
+        <li>Set up — Configuration steps for both SageMaker and IAM Identity Center</li>
+        <li>Audit with CloudTrail — Compliance and monitoring</li>
+        <li>User background sessions — Advanced session management</li>
+        <li>Connect with other AWS services — Integration guides
+          <ul>
+            <li>Connect to Amazon S3 Access Grants
+              <ul>
+                <li>Studio JupyterLab notebooks with Amazon S3 Access Grants</li>
+                <li>Training and Processing jobs with Amazon S3 Access Grants</li>
+              </ul>
+            </li>
+            <li>Connect to Amazon EMR</li>
+            <li>Connect to EMR Serverless</li>
+            <li>Connect to Redshift Data API</li>
+            <li>Connect to Lake Formation and Athena</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 id="technical-depth">Technical Depth</h2>
+  <p>
+    This documentation required deep understanding of enterprise identity management and
+    cross-service AWS architecture:
+  </p>
+  <ul>
+    <li><strong>IAM Identity Center integration:</strong> Documented how user attributes and
+    group associations flow from Identity Center to connected services</li>
+    <li><strong>Token exchange mechanisms:</strong> Explained how identity context is propagated
+    without requiring users to re-authenticate</li>
+    <li><strong>Service-specific authorization:</strong> Each connected service has different
+    authorization models that needed to be documented clearly</li>
+    <li><strong>CloudTrail event structure:</strong> Documented how to interpret audit logs
+    to track user-specific actions across services</li>
+  </ul>
+
+  <h2 id="connected-services">Connected Services Documentation</h2>
+  <p>
+    A major component of this work was documenting integrations with multiple AWS services,
+    each with unique requirements:
+  </p>
+  <div class="info-box">
+    <h4>Service Integrations Documented</h4>
+    <ul>
+      <li><strong>Amazon S3 Access Grants:</strong> Fine-grained data access for notebooks,
+      training jobs, and processing jobs</li>
+      <li><strong>Amazon EMR:</strong> Cluster-based big data processing with identity propagation</li>
+      <li><strong>EMR Serverless:</strong> Serverless Spark and Hive with user identity context</li>
+      <li><strong>Redshift Data API:</strong> Data warehouse queries with user-level auditing</li>
+      <li><strong>Lake Formation and Athena:</strong> Data lake access with fine-grained permissions</li>
+    </ul>
+  </div>
+
+  <h2 id="enterprise-focus">Enterprise Focus</h2>
+  <p>
+    This documentation was specifically designed for enterprise customers with complex
+    identity and compliance requirements:
+  </p>
+  <ul>
+    <li><strong>Compliance enablement:</strong> Detailed CloudTrail integration for audit trails</li>
+    <li><strong>Least privilege support:</strong> User attribute-based access control</li>
+    <li><strong>Cross-team workflows:</strong> Clear handoff points between admin teams</li>
+    <li><strong>Scalability considerations:</strong> Documentation for large-scale deployments</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>What This Demonstrates</h4>
+    <p>
+      Ability to document complex enterprise security features spanning multiple AWS services.
+      Experience with identity management, IAM, and cross-service authorization patterns.
+      Skill in creating documentation for multiple technical audiences (SageMaker admins,
+      IAM Identity Center admins, security engineers). Understanding of enterprise compliance
+      and auditing requirements.
+    </p>
+  </div>
+</article>

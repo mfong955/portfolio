@@ -86,23 +86,94 @@
 </aside>
 
 <script>
+  // Storage key for persisting expanded state
+  var STORAGE_KEY = 'sidebar-expanded-items';
+
+  // Get expanded items from localStorage
+  function getExpandedItems() {
+    try {
+      var stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  // Save expanded items to localStorage
+  function saveExpandedItems(items) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch (e) {
+      // localStorage not available
+    }
+  }
+
+  // Get a unique identifier for a nav item based on its link text
+  function getNavItemId(item) {
+    var link = item.querySelector('.nav-link');
+    return link ? link.textContent.trim() : null;
+  }
+
   // Helper function to toggle nav item expansion
-  function toggleNavItem(item) {
+  function toggleNavItem(item, saveState) {
     var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren');
     var toggle = item.querySelector('.nav-toggle');
     if (!childList) return;
 
+    var itemId = getNavItemId(item);
     var isHidden = childList.hasAttribute('hidden');
+    
     if (isHidden) {
       childList.removeAttribute('hidden');
       if (toggle) toggle.setAttribute('aria-expanded', 'true');
       item.classList.add('nav-item--open');
+      
+      // Save to localStorage
+      if (saveState !== false && itemId) {
+        var expanded = getExpandedItems();
+        if (expanded.indexOf(itemId) === -1) {
+          expanded.push(itemId);
+          saveExpandedItems(expanded);
+        }
+      }
     } else {
       childList.setAttribute('hidden', '');
       if (toggle) toggle.setAttribute('aria-expanded', 'false');
       item.classList.remove('nav-item--open');
+      
+      // Remove from localStorage
+      if (saveState !== false && itemId) {
+        var expanded = getExpandedItems();
+        var index = expanded.indexOf(itemId);
+        if (index > -1) {
+          expanded.splice(index, 1);
+          saveExpandedItems(expanded);
+        }
+      }
     }
   }
+
+  // Restore expanded state from localStorage on page load
+  function restoreExpandedState() {
+    var expanded = getExpandedItems();
+    if (expanded.length === 0) return;
+
+    document.querySelectorAll('.nav-item').forEach(function(item) {
+      var itemId = getNavItemId(item);
+      var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren');
+      
+      if (itemId && childList && expanded.indexOf(itemId) > -1) {
+        // This item should be expanded
+        childList.removeAttribute('hidden');
+        var toggle = item.querySelector('.nav-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'true');
+        item.classList.add('nav-item--open');
+      }
+    });
+  }
+
+  // Restore state on page load
+  restoreExpandedState();
 
   // Sidebar toggle for expand/collapse (chevron button)
   document.querySelectorAll('.nav-toggle').forEach(function(toggle) {

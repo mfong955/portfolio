@@ -86,23 +86,41 @@
 </aside>
 
 <script>
-  // Sidebar toggle for expand/collapse
+  // Helper function to toggle nav item expansion
+  function toggleNavItem(item) {
+    var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren');
+    var toggle = item.querySelector('.nav-toggle');
+    if (!childList) return;
+
+    var isHidden = childList.hasAttribute('hidden');
+    if (isHidden) {
+      childList.removeAttribute('hidden');
+      if (toggle) toggle.setAttribute('aria-expanded', 'true');
+      item.classList.add('nav-item--open');
+    } else {
+      childList.setAttribute('hidden', '');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      item.classList.remove('nav-item--open');
+    }
+  }
+
+  // Sidebar toggle for expand/collapse (chevron button)
   document.querySelectorAll('.nav-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function(e) {
       e.preventDefault();
       var item = this.closest('.nav-item');
-      var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren');
-      if (!childList) return;
+      toggleNavItem(item);
+    });
+  });
 
-      var isHidden = childList.hasAttribute('hidden');
-      if (isHidden) {
-        childList.removeAttribute('hidden');
-        this.setAttribute('aria-expanded', 'true');
-        item.classList.add('nav-item--open');
-      } else {
-        childList.setAttribute('hidden', '');
-        this.setAttribute('aria-expanded', 'false');
-        item.classList.remove('nav-item--open');
+  // Also toggle when clicking on nav links that have children
+  document.querySelectorAll('.nav-item-row .nav-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var item = this.closest('.nav-item');
+      var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren');
+      if (childList) {
+        e.preventDefault();
+        toggleNavItem(item);
       }
     });
   });

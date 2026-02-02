@@ -96,6 +96,103 @@ description: "Sensitivity analysis of how non-dark-matter factors affect cosmolo
     cosmological parameters when baryonic/neutrino effects are ignored</li>
   </ul>
 
+  <h2 id="data-visualization">Data Visualization</h2>
+  <p>
+    The figures in this paper demonstrate the ability to communicate complex simulation
+    results and sensitivity analyses through thoughtful visual design. Each figure was
+    created using Python (Matplotlib, Seaborn) with custom visualization pipelines.
+  </p>
+
+  <h3 id="figure-1">Figure 1: NFW Filter Function for Aperture Mass</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper3-figure1-nfw-filter.png' | relative_url }}"
+         alt="Plot showing the NFW filter function Q_NFW(x) used for aperture mass statistics, demonstrating the compensated filter design that isolates lensing signal."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 1:</span> The NFW filter function <em>Q</em><sub>NFW</sub>(<em>x</em>)
+      used for aperture mass statistics. This compensated filter design isolates the weak lensing
+      signal from galaxy clusters while suppressing contributions from large-scale structure,
+      enabling robust peak identification in noisy convergence maps.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Filter design for signal extraction in noisy data.
+    The compensated filter (positive core, negative annulus) is analogous to edge detection
+    kernels in image processing, optimized for the expected signal profile of galaxy clusters.
+  </p>
+
+  <h3 id="figure-2">Figure 2: S/N Contours on Convergence Map</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper3-figure2-sn-contours.png' | relative_url }}"
+         alt="Convergence map with signal-to-noise contours overlaid, showing cluster locations and the correspondence between mass concentrations and detected peaks."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 2:</span> Signal-to-noise (S/N) contours overlaid on a
+      convergence map from the simulation. Circles mark the locations of identified galaxy clusters.
+      The correspondence between mass concentrations (bright regions) and S/N peaks demonstrates
+      the effectiveness of the aperture mass approach for cluster detection.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Multi-layer visualization combining continuous data
+    (convergence map), derived statistics (S/N contours), and catalog information (cluster positions).
+    This enables visual validation of the peak detection algorithm against known cluster locations.
+  </p>
+
+  <h3 id="figure-5">Figure 5: Halo Mass Function and S/N Peak Distributions</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper3-figure5-halo-mass-function.png' | relative_url }}"
+         alt="Multi-panel plot showing the halo mass function and S/N peak distributions for different simulation configurations, revealing the impact of baryonic physics and neutrino mass."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 5:</span> The halo mass function (left) and S/N peak
+      distributions (right) for different simulation configurations. Comparing dark-matter-only
+      (DMO), baryonic physics (AGN), and massive neutrino runs reveals how each physical effect
+      modifies the observable peak statistics.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Controlled comparison across simulation configurations,
+    analogous to A/B testing in industry. By holding all other parameters constant and varying
+    only the physics model, we isolate the causal impact of each effect on the observable statistics.
+  </p>
+
+  <h3 id="figure-7">Figure 7: Relative Differences in Peak Counts</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper3-figure7-peak-differences.png' | relative_url }}"
+         alt="Plot showing the relative percentage differences in peak counts between different simulation configurations, quantifying the systematic bias from ignoring baryonic physics."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 7:</span> Relative percentage differences in peak counts
+      between simulation configurations. The systematic suppression of high-S/N peaks by baryonic
+      physics (blue) and the distinct signature of massive neutrinos (other colors) demonstrate
+      that these effects must be modeled to avoid biased cosmological parameter estimates.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Quantifying systematic biases through relative difference
+    metrics. This visualization directly communicates the magnitude of the systematic error that
+    would result from ignoring these physical effects in survey analysis pipelines.
+  </p>
+
+  <h3 id="figure-9">Figure 9: S/N Peaks vs. Halo Mass</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper3-figure9-sn-vs-mass.png' | relative_url }}"
+         alt="Scatter plot showing the relationship between S/N peak values and halo mass for different neutrino mass configurations, demonstrating the mass-dependent impact of neutrinos."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 9:</span> The relationship between S/N peak values and
+      halo mass (<em>M</em><sub>200c</sub>) for different neutrino mass configurations. The
+      suppression of high-mass haloes by massive neutrinos creates a distinct signature in the
+      S/N-mass relation that can be used to constrain neutrino properties.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Feature engineering for parameter inference. The S/N-mass
+    relation encodes information about the underlying cosmology, and the mass-dependent impact of
+    neutrinos provides a pathway to constrain fundamental physics from observational data.
+  </p>
+
   <h2 id="results">Key Results</h2>
   <ul>
     <li>Baryonic physics significantly suppresses weak lensing peak counts, particularly
@@ -117,10 +214,13 @@ description: "Sensitivity analysis of how non-dark-matter factors affect cosmolo
     <span class="skill-tag">Aperture Mass Statistics</span>
     <span class="skill-tag">BAHAMAS Simulations</span>
     <span class="skill-tag">Covariance Estimation</span>
+    <span class="skill-tag">A/B Testing Methodology</span>
     <span class="skill-tag">Python</span>
+    <span class="skill-tag">Matplotlib</span>
     <span class="skill-tag">LaTeX</span>
     <span class="skill-tag">Pipeline Architecture</span>
     <span class="skill-tag">Controlled Experiments</span>
+    <span class="skill-tag">Data Visualization</span>
     <span class="skill-tag">Scientific Writing</span>
   </div>
 </article>

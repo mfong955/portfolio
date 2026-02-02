@@ -86,11 +86,94 @@ description: "First-ever empirical measurement of the characteristic depletion r
     statistically significant radial profiles</li>
     <li><strong>Fourier_Quad shear estimation:</strong> Fourier-space method for measuring
     galaxy shapes, more robust than real-space approaches for noisy data</li>
+    <li><strong>MCMC parameter estimation:</strong> Markov Chain Monte Carlo sampling to fit
+    theoretical density profile models and extract characteristic radii with uncertainties</li>
     <li><strong>Profile fitting:</strong> Fitting theoretical density profile models to the
     observed lensing signal to extract characteristic radii</li>
     <li><strong>Statistical validation:</strong> Bootstrap resampling, systematic error estimation,
     and comparison with simulation-based predictions</li>
   </ul>
+
+  <h2 id="data-visualization">Data Visualization</h2>
+  <p>
+    The figures in this paper demonstrate the ability to communicate complex observational
+    results through thoughtful visual design. Each figure was created using Python
+    (Matplotlib, Seaborn) with custom visualization pipelines.
+  </p>
+
+  <h3 id="figure-1">Figure 1: Phase Space Visualization</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper1-figure1-phase-space.png' | relative_url }}"
+         alt="Phase space diagram showing the radial velocity distribution of particles around dark matter haloes, with color indicating particle density and vertical lines marking key physical radii."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 1:</span> Phase space diagram showing the radial velocity
+      distribution of particles around dark matter haloes. The color map indicates particle density,
+      with vertical lines marking key physical radii including the splashback radius and depletion radius.
+      This visualization reveals the distinct dynamical populations of infalling and orbiting matter.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Phase-space density estimation using kernel-based methods
+    on millions of particle positions and velocities. The layered visualization (density colormap +
+    reference lines) encodes multiple data dimensions simultaneously, enabling identification of
+    distinct dynamical populations.
+  </p>
+
+  <h3 id="figure-2">Figure 2: MCMC Fits for Mass-Binned Haloes</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper1-figure2-mcmc-fits.png' | relative_url }}"
+         alt="Multi-panel plot showing excess surface density and bias profiles for haloes binned by mass, with MCMC fit results and uncertainty bands."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 2:</span> Excess surface density (left panels) and bias profiles
+      (right panels) for haloes binned by weak lensing virial mass. Points show observational measurements
+      with error bars; solid lines show best-fit models from MCMC sampling. The bias trough visible in
+      the right panels marks the depletion boundary.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Bayesian parameter estimation using MCMC sampling to fit
+    theoretical models to observational data. The multi-panel layout enables direct comparison across
+    mass bins, revealing how the depletion radius scales with halo mass. Uncertainty bands communicate
+    the precision of the measurements.
+  </p>
+
+  <h3 id="figure-3">Figure 3: Characteristic Radii vs. Halo Mass</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper1-figure3-radii-vs-mass.png' | relative_url }}"
+         alt="Plot showing the characteristic depletion radius and splashback radius as functions of weak lensing virial mass, with simulation predictions overlaid."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 3:</span> The characteristic depletion radius (<em>r</em><sub>cd</sub>)
+      and splashback radius (<em>r</em><sub>sp</sub>) as functions of weak lensing virial mass. Points show
+      observational measurements; lines show predictions from N-body simulations. The agreement validates
+      the theoretical framework established in simulation studies.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Model validation through comparison of observational measurements
+    with simulation predictions. The scaling relations reveal the physical connection between halo mass
+    and boundary locations, providing a predictive framework for future observations.
+  </p>
+
+  <h3 id="figure-4">Figure 4: Depletion vs. Splashback Radii</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper1-figure4-depletion-vs-splashback.png' | relative_url }}"
+         alt="Scatter plot showing the relationship between characteristic depletion radius and splashback radius, demonstrating their correlation and physical connection."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 4:</span> The relationship between the characteristic depletion
+      radius and splashback radius. The correlation demonstrates that these two physical scales are
+      connected through the underlying mass accretion process, with the depletion radius consistently
+      located beyond the splashback radius.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Correlation analysis between two derived physical quantities.
+    The scatter plot with error bars communicates both the central relationship and the measurement
+    uncertainties, enabling assessment of the physical connection between these boundary definitions.
+  </p>
 
   <h2 id="results">Key Results</h2>
   <ul>
@@ -106,12 +189,16 @@ description: "First-ever empirical measurement of the characteristic depletion r
     <span class="skill-tag">Weak Gravitational Lensing</span>
     <span class="skill-tag">DESI Legacy Surveys</span>
     <span class="skill-tag">Fourier_Quad Pipeline</span>
+    <span class="skill-tag">MCMC Sampling</span>
+    <span class="skill-tag">Bayesian Parameter Estimation</span>
     <span class="skill-tag">Statistical Validation</span>
     <span class="skill-tag">Cross-survey Data Matching</span>
     <span class="skill-tag">Signal Processing</span>
     <span class="skill-tag">Python</span>
+    <span class="skill-tag">Matplotlib</span>
     <span class="skill-tag">LaTeX</span>
     <span class="skill-tag">Observational Astronomy</span>
     <span class="skill-tag">Pipeline Architecture</span>
+    <span class="skill-tag">Data Visualization</span>
   </div>
 </article>

@@ -89,6 +89,109 @@ description: "Feasibility study for LSST/Rubin Observatory assessing whether new
     not available from NFW fits</li>
   </ul>
 
+  <h2 id="data-visualization">Data Visualization</h2>
+  <p>
+    The figures in this paper demonstrate the ability to communicate model comparison results
+    and feasibility assessments through thoughtful visual design. Each figure was created
+    using Python (Matplotlib, Seaborn) with custom visualization pipelines.
+  </p>
+
+  <h3 id="figure-1">Figure 1: NFW vs. DK Profile Comparison</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper4-figure1-nfw-dk-profiles.png' | relative_url }}"
+         alt="Three-panel comparison of NFW and DK profiles showing 3D density, convergence, and shear as functions of radius, demonstrating where the models diverge."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 1:</span> Comparison of NFW (dashed green) and DK (solid blue)
+      profiles showing 3D mass density (top), convergence (middle), and shear (bottom) as functions
+      of radius. The vertical red line marks <em>r</em><sub>200c</sub>. The profiles agree well within
+      the virial radius but diverge significantly in the outer regions where the DK profile captures
+      the steepening due to the splashback radius.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Multi-panel comparison of theoretical models across
+    different observable quantities. The stacked layout enables direct visual comparison of where
+    the models agree (inner regions) and diverge (outer regions), informing where observational
+    data will have the most discriminating power.
+  </p>
+
+  <h3 id="figure-2">Figure 2: Shear Forms for NFW and DK Profiles</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper4-figure2-shear-forms.png' | relative_url }}"
+         alt="Plot showing the scaled shear forms for NFW and DK profiles across a range of mass and concentration parameters, demonstrating the self-similarity of NFW and parameter dependence of DK."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 2:</span> The shear forms (scaled shear) for NFW (dashed red)
+      and DK (solid curves) profiles across a range of mass and concentration parameters. The NFW
+      form is self-similar (all parameters collapse to one curve), while the DK form shows parameter
+      dependence in the outer regions. The vertical dashed line marks a typical weak lensing fit radius.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Dimensionless scaling to reveal universal behavior.
+    By plotting the scaled shear form, we identify which aspects of the profile are universal
+    (NFW self-similarity) versus parameter-dependent (DK outer regions), informing the fitting
+    strategy and parameter constraints.
+  </p>
+
+  <h3 id="figure-4">Figure 4: DK vs. NFW Mass Estimates</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper4-figure4-mass-estimates.png' | relative_url }}"
+         alt="Scatter plot comparing DK and NFW mass estimates against true masses from simulations, showing the bias and scatter of each model."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 4:</span> Comparison of DK (red squares) and NFW (blue points)
+      mass estimates against true masses from simulations. The green dotted line shows <em>y = x</em>
+      (perfect recovery). Both models show scatter, but the DK profile provides slightly less biased
+      mass estimates, particularly for the most massive clusters.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Model validation through comparison with ground truth.
+    The scatter plot with identity line enables visual assessment of bias (systematic offset from
+    the line) and precision (scatter around the line) for each model, directly informing which
+    model provides more accurate mass estimates.
+  </p>
+
+  <h3 id="figure-7">Figure 7: Triaxiality Visualization</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper4-figure7-triaxiality.png' | relative_url }}"
+         alt="Convergence map of a simulated cluster with arrows indicating the projected principal axes, demonstrating the impact of triaxiality on weak lensing mass estimates."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 7:</span> Convergence (κ) map of a simulated cluster with
+      arrows indicating the projected principal axes (1 = major, 2 = intermediate, 3 = minor).
+      The major axis appears shortest in projection because it lies close to the line of sight,
+      demonstrating how triaxiality can lead to large errors in mass estimation when using
+      spherical models.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Visualization of systematic effects. By overlaying
+    the 3D shape information (principal axes) on the 2D observable (convergence map), we
+    communicate how projection effects can bias mass estimates, motivating the need for
+    stacking analyses that average over random orientations.
+  </p>
+
+  <h3 id="figure-8">Figure 8: Stacking Analysis Results</h3>
+  <figure class="figure">
+    <img src="{{ '/assets/images/figures/paper4-figure8-stacking.png' | relative_url }}"
+         alt="Plot showing the stacked weak lensing signal compared to NFW and DK model predictions, demonstrating that the DK profile better describes the outer regions of stacked clusters."
+         loading="lazy">
+    <figcaption class="figure-caption">
+      <span class="figure-title">Figure 8:</span> Stacked weak lensing signal (green points) compared
+      to DK (thick black) and NFW (red) model predictions. The stacking analysis combines signals
+      from multiple clusters to increase signal-to-noise. The DK profile provides a better description
+      of the outer regions, where the density steepening due to the splashback radius becomes apparent.
+    </figcaption>
+  </figure>
+  <p>
+    <strong>Data science approach:</strong> Signal averaging to increase statistical power. Stacking
+    is analogous to ensemble methods in machine learning&mdash;by combining many noisy individual
+    measurements, we extract a cleaner signal that reveals the underlying model behavior.
+  </p>
+
   <h2 id="results">Key Results</h2>
   <ul>
     <li>LSST-quality data will be sufficient to distinguish DK from NFW profiles for massive
@@ -111,9 +214,12 @@ description: "Feasibility study for LSST/Rubin Observatory assessing whether new
     <span class="skill-tag">Cosmo-OWLS Simulations</span>
     <span class="skill-tag">Parameterized Modeling</span>
     <span class="skill-tag">Synthetic Data Generation</span>
+    <span class="skill-tag">Stacking Analysis</span>
     <span class="skill-tag">Python</span>
+    <span class="skill-tag">Matplotlib</span>
     <span class="skill-tag">LaTeX</span>
     <span class="skill-tag">Competitive Analysis</span>
+    <span class="skill-tag">Data Visualization</span>
     <span class="skill-tag">Scientific Writing</span>
   </div>
 </article>

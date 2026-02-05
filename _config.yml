@@ -3,7 +3,7 @@ title: Matthew Fong, PhD
 description: Technologist and researcher with expertise in AI/ML engineering, technical communication, and computational data science
 author: Matthew Fong
 email: matthewwf2001@gmail.com
-baseurl: "/technical-writing-examples" # subpath of your site
+baseurl: "/portfolio" # subpath of your site
 url: "https://mfong955.github.io"
 
 # Social links

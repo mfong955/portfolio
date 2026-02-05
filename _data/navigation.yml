@@ -1,9 +1,9 @@
 - title: Home
   url: /
-- title: Technical Writing Samples
-  url: /samples/technical-writing-samples.html
+- title: Portfolio
+  url: /samples/portfolio.html
   children:
-    - title: AWS
+    - title: Technical Communication
       url: /samples/aws.html
       children:
         - title: "Remote Access: Local VS Code to Cloud"
@@ -16,7 +16,9 @@
           url: /samples/trusted-identity-propagation.html
         - title: "Cluster Management: Task Governance Architecture"
           url: /samples/cluster-management-task-governance.html
-    - title: First-author Astrophysics Papers
+    - title: AI/ML Engineering
+      url: /ai-tools.html
+    - title: Research & Data Science
       url: /samples/astrophysics.html
       children:
         - title: "Depletion Radius Measurement"
@@ -27,7 +29,7 @@
           url: /samples/paper-3-baryonic-physics.html
         - title: "Prospects for Mass Distributions"
           url: /samples/paper-4-mass-distributions.html
-- title: AI Tools
-  url: /ai-tools.html
+        - title: "Visual Communication"
+          url: /samples/visual-communication.html
 - title: About
   url: /about.html

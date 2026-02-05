@@ -1,0 +1,89 @@
+---
+layout: default
+title: Multi-Stage AI Drafting Pipeline | Matthew Fong
+description: A multi-stage AI pipeline using LLMs, MCP Protocol, and Python that automated the content drafting process from initial draft through post-review revisions.
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Multi-Stage AI Drafting Pipeline</h1>
+    <p class="lead">
+      A multi-stage AI pipeline that automated the content drafting process from
+      initial draft through post-review revisions&mdash;reducing turnaround time
+      and ensuring consistent quality.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Built with:</span>
+      <span>Amazon Q, Claude, LLMs, MCP Protocol, Python</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context:</span>
+      <span>Internal AWS Engineering</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Impact:</span>
+      <span>Reduced draft-to-review turnaround, consistent style compliance</span>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h4>A Note on Samples</h4>
+    <p>
+      These tools were built for internal AWS workflows and are not available for external
+      demonstration. What I can share is how they worked, the problems they solved, and the
+      measurable impact they had. The experience I gained building these systems has only
+      deepened since&mdash;I continue to explore and build with new AI capabilities as they emerge.
+    </p>
+  </div>
+
+  <h2 id="problem">Problem Solved</h2>
+  <div class="info-box highlight">
+    <p>
+      Technical writers spend significant time transforming raw technical inputs (PRFAQs,
+      design documents, API specifications) into customer-facing documentation. This process
+      involves understanding context, applying style guidelines, and multiple revision cycles.
+    </p>
+  </div>
+
+  <h2 id="how-it-worked">How It Worked</h2>
+  <p>
+    I built a multi-stage AI pipeline using Amazon Q, LLMs, and MCP (Model Context Protocol) that
+    automated the drafting process from initial draft through post-review revisions:
+  </p>
+  <ul>
+    <li><strong>Context ingestion:</strong> System reads and understands source documents
+    (PRFAQs, engineering specs, API references, etc.)</li>
+    <li><strong>Fact-checking layer:</strong> Cross-references generated content against
+    source documents to catch hallucinations</li>
+    <li><strong>Editorial review:</strong> Applies top AWS style guide rules and flags potential
+    issues for human review</li>
+    <li><strong>Feedback integration (Quip):</strong> Writes to Quip, and after review,
+      incorporates reviewer comments, learns from corrections, and creates new drafts with comment references</li>
+    <li><strong>Structured output (XML):</strong> Generates documentation following AWS's
+    information architecture, style guidelines, and formatting</li>
+  </ul>
+
+  <h2 id="results">Results</h2>
+  <ul>
+    <li>Reduction in time from initial draft to review-ready content and post-review draft</li>
+    <li>Consistent application of style guidelines across all generated content</li>
+    <li>Reduced cognitive load on writers, allowing more time to focus on technical accuracy and user needs</li>
+  </ul>
+
+  <h2 id="skills">Skills Demonstrated</h2>
+  <div class="skills-tags">
+    <span class="skill-tag">LLM Integration</span>
+    <span class="skill-tag">Prompt Engineering</span>
+    <span class="skill-tag">MCP Protocol</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">Pipeline Architecture</span>
+    <span class="skill-tag">Fact-Checking Systems</span>
+    <span class="skill-tag">XML/DITA</span>
+    <span class="skill-tag">Content Automation</span>
+  </div>
+</article>

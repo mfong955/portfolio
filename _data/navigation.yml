@@ -16,8 +16,15 @@
           url: /samples/trusted-identity-propagation.html
         - title: "Cluster Management: Task Governance Architecture"
           url: /samples/cluster-management-task-governance.html
-    - title: AI/ML Engineering
+    - title: AI-Powered Tools
       url: /ai-tools.html
+      children:
+        - title: "Multi-Stage AI Drafting Pipeline"
+          url: /samples/ai-drafting-pipeline.html
+        - title: "Agentic Ticket Resolution System"
+          url: /samples/ai-ticket-resolution.html
+        - title: "Promotion Documentation Assistant"
+          url: /samples/ai-promotion-assistant.html
     - title: Research & Data Science
       url: /samples/astrophysics.html
       children:

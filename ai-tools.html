@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AI/ML Engineering | Matthew Fong
+title: AI-Powered Tools | Matthew Fong
 description: AI-powered tools and systems built at AWS using Claude, MCP Protocol, and Python — from multi-stage drafting pipelines to agentic ticket resolution systems.
 ---
 
 <section class="page-hero">
   <div class="page-hero-content">
-    <h1>AI/ML Engineering Projects</h1>
+    <h1>AI-Powered Tools</h1>
     <p class="lead">
       Custom AI-powered tools and systems I designed and built at AWS&mdash;demonstrating
       hands-on LLM integration, prompt engineering, agentic architectures, and
@@ -44,103 +44,9 @@ description: AI-powered tools and systems built at AWS using Claude, MCP Protoco
       These tools were built for internal AWS workflows and are not available for external
       demonstration. What I can share is how they worked, the problems they solved, and the
       measurable impact they had. The experience I gained building these systems has only
-      deepened since—I continue to explore and build with new AI capabilities as they emerge.
+      deepened since&mdash;I continue to explore and build with new AI capabilities as they emerge.
     </p>
   </div>
-
-  <h2 id="drafting-pipeline">Multi-Stage AI Drafting Pipeline</h2>
-  <div class="info-box highlight">
-    <h4>Problem Solved</h4>
-    <p>
-      Technical writers spend significant time transforming raw technical inputs (PRFAQs,
-      design documents, API specifications) into customer-facing documentation. This process
-      involves understanding context, applying style guidelines, and multiple revision cycles.
-    </p>
-  </div>
-
-  <h3>How It Worked</h3>
-  <p>
-    I built a multi-stage AI pipeline using Amazon Q, LLMs, and MCP (Model Context Protocol) that
-    automated the drafting process from initial draft through post-review revisions:
-  </p>
-  <ul>
-    <li><strong>Context ingestion:</strong> System reads and understands source documents
-    (PRFAQs, engineering specs, API references, etc.)</li>
-    <li><strong>Fact-checking layer:</strong> Cross-references generated content against
-    source documents to catch hallucinations</li>
-    <li><strong>Editorial review:</strong> Applies top AWS style guide rules and flags potential
-    issues for human review</li>
-    <li><strong>Feedback integration (Quip):</strong> Writes to Quip, and after review,
-      incorporates reviewer comments, learns from corrections, and creates new drafts with comment references</li>
-    <li><strong>Structured output (XML):</strong> Generates documentation following AWS's
-    information architecture, style guidelines, and formatting</li>
-  </ul>
-
-  <h3>Results</h3>
-  <ul>
-    <li>Reduction in time from initial draft to review-ready content and post-review draft</li>
-    <li>Consistent application of style guidelines across all generated content</li>
-    <li>Reduced cognitive load on writers, allowing more time to focus on technical accuracy and user needs</li>
-  </ul>
-
-  <h2 id="ticket-workflow">Agentic Ticket Resolution System</h2>
-  <div class="info-box highlight">
-    <h4>Problem Solved</h4>
-    <p>
-      Documentation tickets often require repetitive analysis: understanding the request,
-      locating relevant source files, determining the appropriate fix, and implementing
-      changes. This manual process created bottlenecks.
-    </p>
-  </div>
-
-  <h3>How It Worked</h3>
-  <p>
-    I developed an agentic system that automated ticket analysis and resolution:
-  </p>
-  <ul>
-    <li><strong>Ticket parsing:</strong> Takes ticket URL as input, extracts requirements
-    and context</li>
-    <li><strong>Codebase navigation:</strong> Automatically locates relevant XML source
-    files in the documentation repository</li>
-    <li><strong>Action planning:</strong> Breaks down the ticket into discrete steps with
-    clear acceptance criteria, balancing short-term fixes and longer-term impact</li>
-    <li><strong>Multiple output modes:</strong> Can generate diff-style changes, direct
-    source XML updates, or flagged sections for human review</li>
-    <li><strong>Searchable flags:</strong> Inserts markers in output for easy location
-    of changes requiring attention</li>
-  </ul>
-
-  <h3>Results</h3>
-  <ul>
-    <li>Reduced routine simple ticket resolution time significantly</li>
-    <li>Helped identify longer-term underlying documentation issues</li>
-    <li>Standardized approach to common documentation fixes</li>
-    <li>Freed up writer time for more complex, high-value work</li>
-  </ul>
-
-  <h2 id="promotion-assistant">Promotion Documentation Assistant</h2>
-  <div class="info-box highlight">
-    <h4>Problem Solved</h4>
-    <p>
-      Performance review and promotion documentation requires synthesizing months of
-      accomplishments into structured narratives—a deeply time-consuming process.
-    </p>
-  </div>
-
-  <h3>How It Worked</h3>
-  <p>
-    A personal productivity tool I built to streamline my own promotion preparation:
-  </p>
-  <ul>
-    <li><strong>Accomplishment ingestion:</strong> Accepts unstructured notes, bullet
-    points, and raw accomplishment data</li>
-    <li><strong>Format knowledge:</strong> Uses company's promotion documents
-    and evaluation criteria</li>
-    <li><strong>Narrative generation:</strong> Transforms raw inputs into structured
-    stories with clear impact statements</li>
-    <li><strong>STAR format:</strong> Automatically structures content into Situation,
-    Task, Action, Result format</li>
-  </ul>
 
   <h2 id="training">AI Training Courses</h2>
   <p>
@@ -161,8 +67,43 @@ description: AI-powered tools and systems built at AWS using Claude, MCP Protoco
     <p>
       Post-course surveys showed <strong>80%+ adoption rates</strong> of the techniques
       taught, with participants reporting <strong>30%+ productivity gains</strong> in
-      their documentation workflows.
+      their workflows.
     </p>
+  </div>
+
+  <h2 id="projects">Projects</h2>
+  <p>
+    The following projects demonstrate different aspects of AI-powered tool development,
+    from multi-stage pipelines to agentic systems:
+  </p>
+
+  <div class="samples-grid">
+    <a href="{{ '/samples/ai-drafting-pipeline.html' | relative_url }}" class="sample-card">
+      <h3>Multi-Stage AI Drafting Pipeline</h3>
+      <p>
+        A multi-stage AI pipeline using LLMs and MCP that automated content drafting
+        from initial draft through post-review revisions with built-in fact-checking.
+      </p>
+      <span class="card-link">View project &rarr;</span>
+    </a>
+
+    <a href="{{ '/samples/ai-ticket-resolution.html' | relative_url }}" class="sample-card">
+      <h3>Agentic Ticket Resolution System</h3>
+      <p>
+        An agentic system that automated ticket analysis and resolution&mdash;parsing
+        requests, navigating codebases, and generating targeted fixes.
+      </p>
+      <span class="card-link">View project &rarr;</span>
+    </a>
+
+    <a href="{{ '/samples/ai-promotion-assistant.html' | relative_url }}" class="sample-card">
+      <h3>Promotion Documentation Assistant</h3>
+      <p>
+        A personal productivity tool that synthesizes accomplishments into structured
+        STAR-format narratives for performance review documentation.
+      </p>
+      <span class="card-link">View project &rarr;</span>
+    </a>
   </div>
 
   <h2 id="skills">Technical Skills Demonstrated</h2>
@@ -179,7 +120,7 @@ description: AI-powered tools and systems built at AWS using Claude, MCP Protoco
     <h4>Continuing to Build</h4>
     <p>
       The AI landscape evolves rapidly, and so does my toolkit. I continue to experiment
-      with new capabilities—from improved reasoning models to multi-agent architectures—
+      with new capabilities&mdash;from improved reasoning models to multi-agent architectures&mdash;
       always looking for ways to make knowledge workflows more efficient and effective.
     </p>
   </div>

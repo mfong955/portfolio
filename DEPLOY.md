@@ -41,13 +41,13 @@ If you don't have Ruby/Jekyll, you can skip to deploying directly to GitHub Page
 
 **Option A: Automatic (Recommended)**
 
-1. Go to your repository on GitHub: https://github.com/mfong955/technical-writing-examples
+1. Go to your repository on GitHub: https://github.com/mfong955/portfolio
 2. Navigate to **Settings** → **Pages**
 3. Under "Source", select **Deploy from a branch**
 4. Select **main** branch and **/ (root)** folder
 5. Click **Save**
 6. Wait 2-3 minutes for the build to complete
-7. Your site will be live at: `https://mfong955.github.io/technical-writing-examples`
+7. Your site will be live at: `https://mfong955.github.io/portfolio`
 
 **Option B: Manual Push**
 
@@ -67,26 +67,24 @@ Then follow Option A steps 1-7 to enable GitHub Pages.
 ## File Structure
 
 ```
-technical-writing-examples/
+portfolio/
 ├── _config.yml              # Site configuration
+├── _data/
+│   └── navigation.yml       # Navigation configuration
 ├── _layouts/
 │   └── default.html         # Main layout template
 ├── _includes/
 │   ├── header.html          # Navigation header
+│   ├── sidebar.html         # Sidebar navigation
 │   └── footer.html          # Site footer
 ├── assets/
-│   ├── css/
-│   │   └── main.css         # All styles
-│   ├── images/
-│   │   └── figures/         # Astrophysics paper figures (you add these)
-│   └── Fong_Resume_TW.pdf   # Your resume for download
-├── samples/
-│   ├── product-documentation.html
-│   ├── visual-communication.html
-│   ├── architecture-documentation.html
-│   └── process-impact.html
+│   ├── css/main.css         # All styles
+│   ├── js/toc.js            # Table of contents script
+│   └── images/figures/      # Research figures
+├── samples/                 # Portfolio sample pages
 ├── index.html               # Home page
 ├── about.html               # About/Resume page
+├── ai-tools.html            # AI documentation tools
 ├── Gemfile                  # Ruby dependencies
 └── DEPLOY.md                # This file
 ```

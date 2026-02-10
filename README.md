@@ -1,20 +1,18 @@
-# Matthew Fong - Technical Writing Portfolio
+# Matthew Fong - Technology & Research Portfolio
 
-A portfolio website showcasing technical writing samples, built with Jekyll and hosted on GitHub Pages.
+A portfolio website showcasing technical writing, AI tools, and data science research, built with Jekyll and hosted on GitHub Pages.
 
-**Live Site:** [mfong955.github.io/technical-writing-examples](https://mfong955.github.io/technical-writing-examples)
+**Live Site:** [mfong955.github.io/portfolio](https://mfong955.github.io/portfolio/)
 
 ---
 
 ## About
 
-This portfolio demonstrates technical writing expertise across multiple domains:
+This portfolio demonstrates expertise across multiple domains:
 
-- **Product Documentation** - AWS SageMaker AI custom container documentation
-- **Process & Impact** - Cross-functional documentation improvements with AWS-wide impact
-- **Visual Communication** - Publication-quality figures from peer-reviewed astrophysics research
-- **Architecture Documentation** - System design documentation for ML pipelines
-- **AI Tools** - Custom AI-powered documentation workflows
+- **Technical Communication** - AWS SageMaker AI documentation, onboarding improvements, and process governance
+- **AI-Powered Tools** - Custom AI-powered documentation and productivity workflows
+- **Data Science & Research** - Peer-reviewed astrophysics publications and computational analysis
 
 ---
 
@@ -22,33 +20,34 @@ This portfolio demonstrates technical writing expertise across multiple domains:
 
 - **Static Site Generator:** Jekyll
 - **Hosting:** GitHub Pages
-- **Design:** Custom CSS with Anthropic-inspired light theme
+- **Design:** Custom CSS with sidebar navigation
 
 ---
 
 ## Repository Structure
 
 ```
-technical-writing-examples/
+portfolio/
 ├── _config.yml              # Jekyll configuration
+├── _data/
+│   └── navigation.yml       # Navigation configuration
 ├── _layouts/
 │   └── default.html         # Main page template
 ├── _includes/
 │   ├── header.html          # Navigation header
+│   ├── sidebar.html         # Sidebar navigation
 │   └── footer.html          # Page footer
 ├── assets/
 │   ├── css/main.css         # Site styling
-│   └── images/              # Images and figures
-├── samples/
-│   ├── product-documentation.html
-│   ├── visual-communication.html
-│   ├── architecture-documentation.html
-│   └── process-impact.html
+│   ├── js/toc.js            # Table of contents script
+│   └── images/figures/      # Research figures
+├── samples/                 # Portfolio sample pages
 ├── index.html               # Home page
 ├── about.html               # About/resume page
 ├── ai-tools.html            # AI documentation tools
-└── project/
-    └── user_resources/      # Source materials
+├── Gemfile                  # Ruby dependencies
+├── DEPLOY.md                # Deployment instructions
+└── README.md                # This file
 ```
 
 ---
@@ -64,5 +63,5 @@ See [DEPLOY.md](DEPLOY.md) for detailed deployment instructions.
 ## Contact
 
 - **Email:** mwfong2020@gmail.com
-- **LinkedIn:** [linkedin.com/in/matthewfong1](https://linkedin.com/in/matthewfong1)
+- **LinkedIn:** [linkedin.com/in/matthew-w-fong](https://www.linkedin.com/in/matthew-w-fong/)
 - **GitHub:** [github.com/mfong955](https://github.com/mfong955)

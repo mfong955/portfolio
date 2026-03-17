@@ -52,48 +52,6 @@ description: "First-ever empirical measurement of the characteristic depletion r
     that the depletion radius exists in nature, not just in computational models.
   </p>
 
-  <h2 id="data-pipeline">Data Pipeline & Architecture</h2>
-  <p>
-    The core technical challenge was designing a pipeline to cross-match massive halo
-    catalogs with source galaxy imaging data across different survey releases:
-  </p>
-  <ul>
-    <li><strong>Halo catalog:</strong> Galaxy group catalogs constructed from spectroscopic surveys,
-    providing halo mass estimates and positions</li>
-    <li><strong>Source imaging:</strong> DESI Legacy Imaging Surveys DR8 and DR9, providing
-    galaxy shape measurements for weak lensing analysis</li>
-    <li><strong>Cross-matching:</strong> Spatial matching of lens (halo) and source (background galaxy)
-    catalogs across survey footprints with careful selection criteria</li>
-    <li><strong>Shear estimation:</strong> Fourier_Quad pipeline for robust shape measurement,
-    converting galaxy ellipticities into gravitational shear estimates</li>
-    <li><strong>Stacking analysis:</strong> Signal averaging across thousands of halos to extract
-    the weak lensing signal with sufficient signal-to-noise ratio</li>
-  </ul>
-
-  <div class="info-box highlight">
-    <h4>Pipeline Architecture Significance</h4>
-    <p>
-      This pipeline is essentially a large-scale ETL (Extract, Transform, Load) system:
-      ingesting data from multiple astronomical surveys, transforming it through statistical
-      processing stages, and producing validated scientific measurements. The cross-matching
-      and quality control requirements mirror challenges in enterprise data engineering.
-    </p>
-  </div>
-
-  <h2 id="methodology">Statistical Methodology</h2>
-  <ul>
-    <li><strong>Stacked weak lensing:</strong> Combining signals from individual halos to build
-    statistically significant radial profiles</li>
-    <li><strong>Fourier_Quad shear estimation:</strong> Fourier-space method for measuring
-    galaxy shapes, more robust than real-space approaches for noisy data</li>
-    <li><strong>MCMC parameter estimation:</strong> Markov Chain Monte Carlo sampling to fit
-    theoretical density profile models and extract characteristic radii with uncertainties</li>
-    <li><strong>Profile fitting:</strong> Fitting theoretical density profile models to the
-    observed lensing signal to extract characteristic radii</li>
-    <li><strong>Statistical validation:</strong> Bootstrap resampling, systematic error estimation,
-    and comparison with simulation-based predictions</li>
-  </ul>
-
   <h2 id="data-visualization">Data Visualization</h2>
   <p>
     The figures in this paper demonstrate the ability to communicate complex observational
@@ -174,6 +132,48 @@ description: "First-ever empirical measurement of the characteristic depletion r
     The scatter plot with error bars communicates both the central relationship and the measurement
     uncertainties, enabling assessment of the physical connection between these boundary definitions.
   </p>
+
+  <h2 id="data-pipeline">Data Pipeline & Architecture</h2>
+  <p>
+    The core technical challenge was designing a pipeline to cross-match massive halo
+    catalogs with source galaxy imaging data across different survey releases:
+  </p>
+  <ul>
+    <li><strong>Halo catalog:</strong> Galaxy group catalogs constructed from spectroscopic surveys,
+    providing halo mass estimates and positions</li>
+    <li><strong>Source imaging:</strong> DESI Legacy Imaging Surveys DR8 and DR9, providing
+    galaxy shape measurements for weak lensing analysis</li>
+    <li><strong>Cross-matching:</strong> Spatial matching of lens (halo) and source (background galaxy)
+    catalogs across survey footprints with careful selection criteria</li>
+    <li><strong>Shear estimation:</strong> Fourier_Quad pipeline for robust shape measurement,
+    converting galaxy ellipticities into gravitational shear estimates</li>
+    <li><strong>Stacking analysis:</strong> Signal averaging across thousands of halos to extract
+    the weak lensing signal with sufficient signal-to-noise ratio</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>Pipeline Architecture Significance</h4>
+    <p>
+      This pipeline is essentially a large-scale ETL (Extract, Transform, Load) system:
+      ingesting data from multiple astronomical surveys, transforming it through statistical
+      processing stages, and producing validated scientific measurements. The cross-matching
+      and quality control requirements mirror challenges in enterprise data engineering.
+    </p>
+  </div>
+
+  <h2 id="methodology">Statistical Methodology</h2>
+  <ul>
+    <li><strong>Stacked weak lensing:</strong> Combining signals from individual halos to build
+    statistically significant radial profiles</li>
+    <li><strong>Fourier_Quad shear estimation:</strong> Fourier-space method for measuring
+    galaxy shapes, more robust than real-space approaches for noisy data</li>
+    <li><strong>MCMC parameter estimation:</strong> Markov Chain Monte Carlo sampling to fit
+    theoretical density profile models and extract characteristic radii with uncertainties</li>
+    <li><strong>Profile fitting:</strong> Fitting theoretical density profile models to the
+    observed lensing signal to extract characteristic radii</li>
+    <li><strong>Statistical validation:</strong> Bootstrap resampling, systematic error estimation,
+    and comparison with simulation-based predictions</li>
+  </ul>
 
   <h2 id="results">Key Results</h2>
   <ul>

@@ -52,43 +52,6 @@ description: "Feasibility study for LSST/Rubin Observatory assessing whether new
     accretion)? This is fundamentally a <strong>model selection and forecasting</strong> problem.
   </p>
 
-  <h2 id="data-pipeline">Data Pipeline</h2>
-  <ul>
-    <li><strong>Simulation source:</strong> Cosmo-OWLS simulations providing realistic halo density
-    profiles with full baryonic physics</li>
-    <li><strong>Synthetic lensing generation:</strong> Creating mock weak lensing measurements
-    with realistic noise properties matching LSST specifications (source density, shape noise,
-    photometric redshift errors)</li>
-    <li><strong>Profile fitting:</strong> Fitting both NFW and DK models to the synthetic data using
-    Bayesian parameter estimation</li>
-    <li><strong>Signal-to-noise forecasting:</strong> Computing how profile distinguishability scales with
-    survey depth, source density, and halo mass</li>
-  </ul>
-
-  <div class="info-box highlight">
-    <h4>Industry Parallel: Technology Evaluation</h4>
-    <p>
-      This paper is structurally a <strong>technology evaluation / competitive analysis</strong>:
-      given a new "product" (DK profile) and a market standard (NFW profile), under what
-      conditions does the new product demonstrably outperform? The methodology&mdash;synthetic
-      data generation, controlled comparison, sensitivity to deployment conditions&mdash;maps
-      directly to product feasibility studies and A/B test design.
-    </p>
-  </div>
-
-  <h2 id="methodology">Statistical Methodology</h2>
-  <ul>
-    <li><strong>Bayesian model comparison:</strong> Computing Bayesian evidence for NFW vs. DK profiles
-    to determine which model is preferred by the data</li>
-    <li><strong>Signal-to-noise forecasting:</strong> Predicting the survey conditions under which the
-    DK profile becomes statistically distinguishable from NFW</li>
-    <li><strong>Parameter degeneracy analysis:</strong> Identifying which DK profile parameters are
-    well-constrained vs. degenerate with observational uncertainties</li>
-    <li><strong>Parameterized accretion modeling:</strong> The DK profile encodes the mass accretion
-    history of haloes through its outer slope parameter, providing physical information
-    not available from NFW fits</li>
-  </ul>
-
   <h2 id="data-visualization">Data Visualization</h2>
   <p>
     The figures in this paper demonstrate the ability to communicate model comparison results
@@ -191,6 +154,43 @@ description: "Feasibility study for LSST/Rubin Observatory assessing whether new
     is analogous to ensemble methods in machine learning&mdash;by combining many noisy individual
     measurements, we extract a cleaner signal that reveals the underlying model behavior.
   </p>
+
+  <h2 id="data-pipeline">Data Pipeline</h2>
+  <ul>
+    <li><strong>Simulation source:</strong> Cosmo-OWLS simulations providing realistic halo density
+    profiles with full baryonic physics</li>
+    <li><strong>Synthetic lensing generation:</strong> Creating mock weak lensing measurements
+    with realistic noise properties matching LSST specifications (source density, shape noise,
+    photometric redshift errors)</li>
+    <li><strong>Profile fitting:</strong> Fitting both NFW and DK models to the synthetic data using
+    Bayesian parameter estimation</li>
+    <li><strong>Signal-to-noise forecasting:</strong> Computing how profile distinguishability scales with
+    survey depth, source density, and halo mass</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>Industry Parallel: Technology Evaluation</h4>
+    <p>
+      This paper is structurally a <strong>technology evaluation / competitive analysis</strong>:
+      given a new "product" (DK profile) and a market standard (NFW profile), under what
+      conditions does the new product demonstrably outperform? The methodology&mdash;synthetic
+      data generation, controlled comparison, sensitivity to deployment conditions&mdash;maps
+      directly to product feasibility studies and A/B test design.
+    </p>
+  </div>
+
+  <h2 id="methodology">Statistical Methodology</h2>
+  <ul>
+    <li><strong>Bayesian model comparison:</strong> Computing Bayesian evidence for NFW vs. DK profiles
+    to determine which model is preferred by the data</li>
+    <li><strong>Signal-to-noise forecasting:</strong> Predicting the survey conditions under which the
+    DK profile becomes statistically distinguishable from NFW</li>
+    <li><strong>Parameter degeneracy analysis:</strong> Identifying which DK profile parameters are
+    well-constrained vs. degenerate with observational uncertainties</li>
+    <li><strong>Parameterized accretion modeling:</strong> The DK profile encodes the mass accretion
+    history of haloes through its outer slope parameter, providing physical information
+    not available from NFW fits</li>
+  </ul>
 
   <h2 id="results">Key Results</h2>
   <ul>

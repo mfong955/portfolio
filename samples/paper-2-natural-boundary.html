@@ -52,44 +52,6 @@ description: "Discovery of a bias trough that marks the boundary where haloes de
     used for decades in astrophysics.
   </p>
 
-  <h2 id="data-pipeline">Data Pipeline</h2>
-  <ul>
-    <li><strong>Simulation data:</strong> N-body cosmological simulations containing 8+ billion dark matter
-    particles, tracking gravitational evolution of the universe</li>
-    <li><strong>Halo identification:</strong> Automated detection of gravitationally-bound structures (haloes)
-    within the simulation volume</li>
-    <li><strong>Property extraction:</strong> Computing mass, velocity, spin, shape, formation time, and
-    environmental density for each identified halo</li>
-    <li><strong>Bias profile computation:</strong> Calculating the ratio of local-to-average matter density
-    as a function of distance from each halo center</li>
-    <li><strong>Phase-space analysis:</strong> Extracting radial velocity distributions for particle populations
-    around haloes</li>
-  </ul>
-
-  <h2 id="methodology">Statistical & ML Methodology</h2>
-  <ul>
-    <li><strong>High-dimensional phase-space analysis:</strong> Examining particle distributions in position-velocity
-    space to identify physical boundaries</li>
-    <li><strong>Gaussian Process Regression:</strong> Non-parametric modeling of the characteristic depletion
-    radius as a function of multiple halo properties simultaneously</li>
-    <li><strong>Multi-parameter binning:</strong> Systematic analysis of bias profiles across 6 different
-    halo parameters, individually and in pairs</li>
-    <li><strong>Velocity profile modeling:</strong> Decomposing radial velocity distributions into infall
-    and splashback components to measure mass accretion rates</li>
-    <li><strong>Feature engineering:</strong> Identifying which combinations of halo properties most strongly
-    predict the depletion boundary location</li>
-  </ul>
-
-  <div class="info-box highlight">
-    <h4>Data Science Significance</h4>
-    <p>
-      This work is fundamentally a feature engineering and predictive modeling problem:
-      given a set of halo properties, can we predict the location of a physical boundary?
-      The Gaussian Process Regression approach allowed non-parametric modeling of complex,
-      non-linear relationships in high-dimensional parameter space.
-    </p>
-  </div>
-
   <h2 id="data-visualization">Data Visualization</h2>
   <p>
     The figures in this paper demonstrate the ability to communicate multi-dimensional
@@ -180,6 +142,44 @@ description: "Discovery of a bias trough that marks the boundary where haloes de
       If the figures are not displaying, they need to be extracted from the PDF and placed
       in the <code>assets/images/figures/</code> directory. See the deployment instructions
       for details.
+    </p>
+  </div>
+
+  <h2 id="data-pipeline">Data Pipeline</h2>
+  <ul>
+    <li><strong>Simulation data:</strong> N-body cosmological simulations containing 8+ billion dark matter
+    particles, tracking gravitational evolution of the universe</li>
+    <li><strong>Halo identification:</strong> Automated detection of gravitationally-bound structures (haloes)
+    within the simulation volume</li>
+    <li><strong>Property extraction:</strong> Computing mass, velocity, spin, shape, formation time, and
+    environmental density for each identified halo</li>
+    <li><strong>Bias profile computation:</strong> Calculating the ratio of local-to-average matter density
+    as a function of distance from each halo center</li>
+    <li><strong>Phase-space analysis:</strong> Extracting radial velocity distributions for particle populations
+    around haloes</li>
+  </ul>
+
+  <h2 id="methodology">Statistical & ML Methodology</h2>
+  <ul>
+    <li><strong>High-dimensional phase-space analysis:</strong> Examining particle distributions in position-velocity
+    space to identify physical boundaries</li>
+    <li><strong>Gaussian Process Regression:</strong> Non-parametric modeling of the characteristic depletion
+    radius as a function of multiple halo properties simultaneously</li>
+    <li><strong>Multi-parameter binning:</strong> Systematic analysis of bias profiles across 6 different
+    halo parameters, individually and in pairs</li>
+    <li><strong>Velocity profile modeling:</strong> Decomposing radial velocity distributions into infall
+    and splashback components to measure mass accretion rates</li>
+    <li><strong>Feature engineering:</strong> Identifying which combinations of halo properties most strongly
+    predict the depletion boundary location</li>
+  </ul>
+
+  <div class="info-box highlight">
+    <h4>Data Science Significance</h4>
+    <p>
+      This work is fundamentally a feature engineering and predictive modeling problem:
+      given a set of halo properties, can we predict the location of a physical boundary?
+      The Gaussian Process Regression approach allowed non-parametric modeling of complex,
+      non-linear relationships in high-dimensional parameter space.
     </p>
   </div>
 

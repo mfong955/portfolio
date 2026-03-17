@@ -6,16 +6,16 @@
     - title: Technical Communication
       url: /samples/aws.html
       children:
-        - title: "Remote Access: Local VS Code to Cloud"
-          url: /samples/remote-access-vscode.html
-        - title: "Onboarding Docs: SageMaker and AWS-Wide Improvements"
-          url: /samples/onboarding-docs-improvements.html
         - title: "BYOI: Custom Container Environments"
           url: /samples/byoi-custom-containers.html
-        - title: "Trusted Identity Propagation: Enterprise Identity"
-          url: /samples/trusted-identity-propagation.html
+        - title: "Remote Access: Local VS Code to Cloud"
+          url: /samples/remote-access-vscode.html
         - title: "Cluster Management: Task Governance Architecture"
           url: /samples/cluster-management-task-governance.html
+        - title: "Trusted Identity Propagation: Enterprise Identity"
+          url: /samples/trusted-identity-propagation.html
+        - title: "Onboarding Docs: SageMaker and AWS-Wide Improvements"
+          url: /samples/onboarding-docs-improvements.html
     - title: AI-Powered Tools
       url: /ai-tools.html
       children:
@@ -28,10 +28,10 @@
     - title: Research & Data Science
       url: /samples/astrophysics.html
       children:
-        - title: "Depletion Radius Measurement"
-          url: /samples/paper-1-depletion-radius.html
         - title: "Natural Boundary of Dark Matter Haloes"
           url: /samples/paper-2-natural-boundary.html
+        - title: "Depletion Radius Measurement"
+          url: /samples/paper-1-depletion-radius.html
         - title: "Impact of Baryonic Physics"
           url: /samples/paper-3-baryonic-physics.html
         - title: "Prospects for Mass Distributions"

@@ -399,10 +399,21 @@ pre code {
   margin-top: var(--space-xs);
 }
 
+.nav-list--great-grandchildren {
+  padding-left: var(--space-md);
+  margin-top: var(--space-xs);
+}
+
 .nav-list--children .nav-link,
 .nav-list--grandchildren .nav-link {
   font-size: 0.8125rem;
   padding: 4px var(--space-sm);
+}
+
+.nav-list--great-grandchildren .nav-link {
+  font-size: 0.75rem;
+  padding: 3px var(--space-sm);
+  color: var(--color-text-muted);
 }
 
 /* Sidebar overlay for mobile */

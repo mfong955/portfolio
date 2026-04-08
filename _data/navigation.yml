@@ -21,8 +21,20 @@
       children:
         - title: "At AWS"
           url: /samples/at-aws.html
+          children:
+            - title: "Multi-Stage AI Drafting Pipeline"
+              url: /samples/ai-drafting-pipeline.html
+            - title: "Agentic Ticket Resolution System"
+              url: /samples/ai-ticket-resolution.html
+            - title: "Promotion Documentation Assistant"
+              url: /samples/ai-promotion-assistant.html
         - title: "Personal"
           url: /samples/personal-ai-tools.html
+          children:
+            - title: "Unbias AI"
+              url: /samples/unbias-ai.html
+            - title: "Airbyte Issue Analyst"
+              url: /samples/airbyte-dev-adv.html
     - title: Research & Data Science
       url: /samples/astrophysics.html
       children:

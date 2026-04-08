@@ -40,8 +40,30 @@
                         {% if page.url == grandchild.url %}
                           {% assign gc_active = true %}
                         {% endif %}
-                        <li class="nav-item{% if gc_active %} nav-item--active{% endif %}">
-                          <a href="{{ grandchild.url | relative_url }}" class="nav-link{% if gc_active %} nav-link--active{% endif %}">{{ grandchild.title }}</a>
+                        <li class="nav-item{% if gc_active %} nav-item--active{% endif %}{% if grandchild.children %} nav-item--open{% endif %}">
+                          {% if grandchild.children %}
+                            <div class="nav-item-row">
+                              <a href="{{ grandchild.url | relative_url }}" class="nav-link{% if gc_active %} nav-link--active{% endif %}">{{ grandchild.title }}</a>
+                              <button class="nav-toggle" aria-expanded="true" aria-label="Toggle {{ grandchild.title }}">
+                                <svg class="nav-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                  <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </button>
+                            </div>
+                            <ul class="nav-list nav-list--great-grandchildren">
+                              {% for ggchild in grandchild.children %}
+                                {% assign ggc_active = false %}
+                                {% if page.url == ggchild.url %}
+                                  {% assign ggc_active = true %}
+                                {% endif %}
+                                <li class="nav-item{% if ggc_active %} nav-item--active{% endif %}">
+                                  <a href="{{ ggchild.url | relative_url }}" class="nav-link{% if ggc_active %} nav-link--active{% endif %}">{{ ggchild.title }}</a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% else %}
+                            <a href="{{ grandchild.url | relative_url }}" class="nav-link{% if gc_active %} nav-link--active{% endif %}">{{ grandchild.title }}</a>
+                          {% endif %}
                         </li>
                       {% endfor %}
                     </ul>
@@ -91,7 +113,7 @@
 
   // Helper function to toggle nav item expansion
   function toggleNavItem(item, saveState) {
-    var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren');
+    var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren, .nav-list--great-grandchildren');
     var toggle = item.querySelector('.nav-toggle');
     if (!childList) return;
 
@@ -136,7 +158,7 @@
 
     document.querySelectorAll('.nav-item').forEach(function(item) {
       var itemId = getNavItemId(item);
-      var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren');
+      var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren, .nav-list--great-grandchildren');
       
       if (itemId && childList && collapsed.indexOf(itemId) > -1) {
         // This item should be collapsed

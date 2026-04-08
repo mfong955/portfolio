@@ -19,6 +19,10 @@
     - title: AI-Powered Tools
       url: /ai-tools.html
       children:
+        - title: "Unbias AI"
+          url: /samples/unbias-ai.html
+        - title: "Airbyte Issue Analyst"
+          url: /samples/airbyte-dev-adv.html
         - title: "Multi-Stage AI Drafting Pipeline"
           url: /samples/ai-drafting-pipeline.html
         - title: "Agentic Ticket Resolution System"

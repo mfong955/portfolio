@@ -32,6 +32,29 @@ description: A 2-day interview project for Airbyte — an AI-powered pipeline th
     </div>
   </div>
 
+  <div class="project-screenshots">
+    <figure class="screenshot">
+      <img src="{{ '/assets/images/airbyte-issue-analysis.png' | relative_url }}"
+           alt="Airbyte Issue Analyst dashboard showing 1,016 issues analyzed, 1,001 advocate opportunities (99%), top category bug-with-advocacy, and a bar chart breakdown by issue category with example questions in the sidebar."
+           loading="lazy">
+      <figcaption>Summary dashboard: key metrics and issue category breakdown generated from live PyAirbyte ingestion and Claude enrichment.</figcaption>
+    </figure>
+
+    <figure class="screenshot">
+      <img src="{{ '/assets/images/airbyte-drilling-down.png' | relative_url }}"
+           alt="Drilling into the AI-enriched dataset — a filtered table of feature-request issues showing titles and GitHub URLs, surfaced after clicking a bar chart category."
+           loading="lazy">
+      <figcaption>Drilling into a category: clicking a bar chart filters to the underlying issues, with direct links to GitHub.</figcaption>
+    </figure>
+
+    <figure class="screenshot">
+      <img src="{{ '/assets/images/airbyte-prompting-enriched.png' | relative_url }}"
+           alt="Natural language Q&A: the question 'Which issues represent the best developer advocate opportunities?' triggers Claude to generate a SQL query, run it, and return a plain-language interpretation identifying PostgreSQL CDC problems, MySQL/MariaDB connection failures, and large schema handling issues as top priorities."
+           loading="lazy">
+      <figcaption>Natural language Q&amp;A: plain English questions become SQL, run against the enriched database, and return an interpreted answer with the generated query visible for transparency.</figcaption>
+    </figure>
+  </div>
+
   <h2 id="problem">The Problem</h2>
   <div class="info-box highlight">
     <p>

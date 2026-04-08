@@ -748,6 +748,35 @@ pre code {
   }
 }
 
+/* Project screenshots */
+.project-screenshots {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.screenshot {
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.screenshot figcaption {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary, #f8f8f8);
+  border-top: 1px solid var(--color-border);
+}
+
 /* Sample page content */
 .sample-meta {
   display: flex;

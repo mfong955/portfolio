@@ -17,12 +17,12 @@
         - title: "Onboarding Docs: SageMaker and AWS-Wide Improvements"
           url: /samples/onboarding-docs-improvements.html
     - title: AI-Powered Tools
-      url: /ai-tools.html
+      url: /samples/ai-tools.html
       children:
         - title: "At AWS"
-          url: /at-aws.html
+          url: /samples/at-aws.html
         - title: "Personal"
-          url: /personal-ai-tools.html
+          url: /samples/personal-ai-tools.html
     - title: Research & Data Science
       url: /samples/astrophysics.html
       children:

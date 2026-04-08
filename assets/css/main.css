@@ -155,6 +155,8 @@ pre code {
 }
 
 .header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 0 var(--space-lg);
   height: 100%;
   display: flex;
@@ -262,6 +264,8 @@ pre code {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr var(--toc-width);
   min-height: calc(100vh - var(--header-height));
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .main-content {

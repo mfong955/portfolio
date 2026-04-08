@@ -1,0 +1,135 @@
+---
+layout: default
+title: Airbyte Issue Analyst — Interview Project | Matthew Fong
+description: A 2-day interview project for Airbyte — an AI-powered pipeline that ingests GitHub issues via PyAirbyte, enriches them with Claude, and exposes a natural language Q&A agent for developer advocacy insights.
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Airbyte Issue Analyst</h1>
+    <p class="lead">
+      A 2-day interview project for a Senior Developer Advocate role at Airbyte&mdash;an
+      end-to-end AI pipeline that ingests GitHub issues using PyAirbyte, enriches each one
+      with Claude-powered structured analysis, and surfaces developer advocacy opportunities
+      through a natural language Q&amp;A agent.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Built with:</span>
+      <span>Python, PyAirbyte, DuckDB, Claude, Streamlit</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context:</span>
+      <span>Late-round interview assignment &mdash; Airbyte Senior Developer Advocate</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Timeline:</span>
+      <span>2 days</span>
+    </div>
+  </div>
+
+  <h2 id="problem">The Problem</h2>
+  <div class="info-box highlight">
+    <p>
+      The <code>airbytehq/airbyte</code> GitHub repository has thousands of open issues.
+      No one person can read them all, but developer advocates need to know: where are
+      developers confused? What features are being requested? Where is the documentation
+      failing them? This pipeline automates that triage.
+    </p>
+  </div>
+
+  <h2 id="what-i-built">What I Built</h2>
+  <p>
+    The tool has three layers, each demonstrating a distinct capability:
+  </p>
+  <ul>
+    <li><strong>Data ingestion (PyAirbyte):</strong> Uses the production
+    <code>source-github</code> connector&mdash;no mocks&mdash;to sync live issues from
+    the Airbyte repository into a local DuckDB database, filtered to advocacy-relevant
+    labels (<code>documentation</code>, <code>question</code>, <code>enhancement</code>,
+    <code>good first issue</code>).</li>
+    <li><strong>AI enrichment (Claude):</strong> Calls Claude once per issue to extract
+    structured signal: pain point category, sentiment, whether it represents an advocate
+    opportunity, and a specific recommended action. Idempotent&mdash;safe to re-run.</li>
+    <li><strong>Natural language Q&amp;A agent (Claude + Streamlit):</strong> A two-call
+    agent that translates plain English questions into SQL, runs them against the enriched
+    database, and returns a plain-language interpretation alongside the generated query
+    and raw results.</li>
+  </ul>
+
+  <h2 id="architecture">Architecture</h2>
+  <pre><code>source-github (Docker)
+        │
+        ▼
+  PyAirbyte sync
+        │
+        ▼
+  DuckDB (data/community.db)
+    ├── issues table        ← 100 most recent matching issues
+    └── enrichment table    ← Claude-structured analysis per issue
+        │
+        ▼
+  AnalystAgent
+    ├── Call 1: question → SQL   (Claude, few-shot)
+    └── Call 2: SQL + results → interpretation  (Claude)
+        │
+        ▼
+  Streamlit UI
+    ├── Summary dashboard (metrics + bar chart)
+    └── Natural language Q&amp;A</code></pre>
+
+  <h2 id="demo-questions">What You Can Ask It</h2>
+  <p>
+    The Streamlit UI ships with pre-loaded demo questions that illustrate the kind of
+    developer advocacy intelligence the pipeline surfaces:
+  </p>
+  <ul>
+    <li>What documentation gaps come up most often?</li>
+    <li>Which issues represent the best developer advocate opportunities?</li>
+    <li>What features are developers requesting most?</li>
+    <li>Give me 3 specific advocate actions based on these issues</li>
+    <li>What connectors or integrations are mentioned most?</li>
+  </ul>
+  <p>
+    Each answer shows the generated SQL, a plain-language interpretation, and the raw
+    results table&mdash;making the reasoning transparent and auditable.
+  </p>
+
+  <h2 id="what-it-proves">What This Demonstrates</h2>
+  <ul>
+    <li><strong>PyAirbyte as real infrastructure:</strong> The actual production connector
+    ingests live data&mdash;not a JSON fixture or a mock.</li>
+    <li><strong>Claude for both batch and conversational tasks:</strong> Structured JSON
+    extraction at scale for enrichment; few-shot text-to-SQL for interactive Q&amp;A.</li>
+    <li><strong>Genuine utility:</strong> Community pain points are mapped to concrete
+    developer advocacy actions, not just categorized.</li>
+  </ul>
+
+  <div class="info-box">
+    <h4>View the Source</h4>
+    <p>
+      The full project is publicly available at
+      <a href="https://github.com/mfong955/aibyte-dev-adv" target="_blank" rel="noopener">github.com/mfong955/aibyte-dev-adv</a>.
+      It includes setup instructions, the ingest and enrichment pipelines, the Q&amp;A
+      agent, and the Streamlit app.
+    </p>
+  </div>
+
+  <h2 id="skills">Skills Demonstrated</h2>
+  <div class="skills-tags">
+    <span class="skill-tag">PyAirbyte</span>
+    <span class="skill-tag">DuckDB</span>
+    <span class="skill-tag">Claude API</span>
+    <span class="skill-tag">Structured Extraction</span>
+    <span class="skill-tag">Text-to-SQL</span>
+    <span class="skill-tag">Agentic Architecture</span>
+    <span class="skill-tag">Streamlit</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">Data Pipeline Design</span>
+    <span class="skill-tag">Developer Advocacy</span>
+  </div>
+</article>

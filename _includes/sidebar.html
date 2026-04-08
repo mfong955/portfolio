@@ -83,95 +83,31 @@
 </aside>
 
 <script>
-  // Storage key for persisting collapsed state (items user explicitly closed)
-  var STORAGE_KEY = 'sidebar-collapsed-items';
+  // Clear any stale localStorage state so the nav is always fully expanded
+  try { localStorage.removeItem('sidebar-collapsed-items'); } catch(e) {}
 
-  // Get collapsed items from localStorage
-  function getCollapsedItems() {
-    try {
-      var stored = localStorage.getItem(STORAGE_KEY);
-      return stored ? JSON.parse(stored) : [];
-    } catch (e) {
-      return [];
+  // Toggle a nav item open/closed for the current page visit only (not persisted)
+  function toggleNavItem(item) {
+    var childList = item.querySelector(':scope > ul, :scope > div + ul');
+    if (!childList) {
+      // Fall back to first nested list
+      childList = item.querySelector('.nav-list--children, .nav-list--grandchildren, .nav-list--great-grandchildren');
     }
-  }
-
-  // Save collapsed items to localStorage
-  function saveCollapsedItems(items) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-    } catch (e) {
-      // localStorage not available
-    }
-  }
-
-  // Get a unique identifier for a nav item based on its link text
-  function getNavItemId(item) {
-    var link = item.querySelector('.nav-link');
-    return link ? link.textContent.trim() : null;
-  }
-
-  // Helper function to toggle nav item expansion
-  function toggleNavItem(item, saveState) {
-    var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren, .nav-list--great-grandchildren');
-    var toggle = item.querySelector('.nav-toggle');
     if (!childList) return;
 
-    var itemId = getNavItemId(item);
+    var toggle = item.querySelector(':scope > .nav-item-row > .nav-toggle, :scope > .nav-toggle');
     var isHidden = childList.hasAttribute('hidden');
-    
+
     if (isHidden) {
-      // Opening: remove from collapsed list
       childList.removeAttribute('hidden');
       if (toggle) toggle.setAttribute('aria-expanded', 'true');
       item.classList.add('nav-item--open');
-      
-      if (saveState !== false && itemId) {
-        var collapsed = getCollapsedItems();
-        var index = collapsed.indexOf(itemId);
-        if (index > -1) {
-          collapsed.splice(index, 1);
-          saveCollapsedItems(collapsed);
-        }
-      }
     } else {
-      // Closing: add to collapsed list
       childList.setAttribute('hidden', '');
       if (toggle) toggle.setAttribute('aria-expanded', 'false');
       item.classList.remove('nav-item--open');
-      
-      if (saveState !== false && itemId) {
-        var collapsed = getCollapsedItems();
-        if (collapsed.indexOf(itemId) === -1) {
-          collapsed.push(itemId);
-          saveCollapsedItems(collapsed);
-        }
-      }
     }
   }
-
-  // Apply collapsed state from localStorage on page load
-  // By default everything is open; we only collapse items the user explicitly closed
-  function applyCollapsedState() {
-    var collapsed = getCollapsedItems();
-    if (collapsed.length === 0) return;
-
-    document.querySelectorAll('.nav-item').forEach(function(item) {
-      var itemId = getNavItemId(item);
-      var childList = item.querySelector('.nav-list--children, .nav-list--grandchildren, .nav-list--great-grandchildren');
-      
-      if (itemId && childList && collapsed.indexOf(itemId) > -1) {
-        // This item should be collapsed
-        childList.setAttribute('hidden', '');
-        var toggle = item.querySelector('.nav-toggle');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
-        item.classList.remove('nav-item--open');
-      }
-    });
-  }
-
-  // Apply collapsed state on page load
-  applyCollapsedState();
 
   // Sidebar toggle for expand/collapse (chevron button)
   document.querySelectorAll('.nav-toggle').forEach(function(toggle) {

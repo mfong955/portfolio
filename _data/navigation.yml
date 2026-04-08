@@ -19,16 +19,10 @@
     - title: AI-Powered Tools
       url: /ai-tools.html
       children:
-        - title: "Unbias AI"
-          url: /samples/unbias-ai.html
-        - title: "Airbyte Issue Analyst"
-          url: /samples/airbyte-dev-adv.html
-        - title: "Multi-Stage AI Drafting Pipeline"
-          url: /samples/ai-drafting-pipeline.html
-        - title: "Agentic Ticket Resolution System"
-          url: /samples/ai-ticket-resolution.html
-        - title: "Promotion Documentation Assistant"
-          url: /samples/ai-promotion-assistant.html
+        - title: "At AWS"
+          url: /at-aws.html
+        - title: "Personal"
+          url: /personal-ai-tools.html
     - title: Research & Data Science
       url: /samples/astrophysics.html
       children:

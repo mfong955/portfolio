@@ -1,147 +1,40 @@
 ---
 layout: default
 title: AI-Powered Tools | Matthew Fong
-description: AI-powered tools built by Matthew Fong — from a live civic education platform to interview projects and internal AWS systems using Claude, PyAirbyte, MCP Protocol, and Python.
+description: AI-powered tools built by Matthew Fong — internal AWS systems and personal projects demonstrating LLM integration, agentic architectures, full-stack development, and data pipelines.
 ---
 
 <section class="page-hero">
   <div class="page-hero-content">
     <h1>AI-Powered Tools</h1>
     <p class="lead">
-      AI-powered tools I've designed and built&mdash;from a live civic education platform
-      and interview projects to internal AWS systems&mdash;demonstrating hands-on LLM integration,
-      prompt engineering, agentic architectures, and data pipelines.
+      Hands-on AI work across two contexts&mdash;internal systems built at AWS and
+      personal projects built independently. Both demonstrate end-to-end ownership:
+      from architecture decisions to working software.
     </p>
   </div>
 </section>
 
 <article class="page-content">
-  <div class="sample-meta">
-    <div class="meta-item">
-      <span class="meta-label">Built with:</span>
-      <span>Claude, LLMs, AI, MCP Protocol, Python</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">Context:</span>
-      <span>Internal AWS Engineering</span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">Impact:</span>
-      <span>Measurable workflow efficiency gains, freeing up time for strategic work</span>
-    </div>
-  </div>
-
-  <h2 id="context">About These Projects</h2>
-  <p>
-    At AWS, I designed and built AI-powered systems that automated complex workflows,
-    achieving measurable productivity gains. These tools were developed for internal use
-    and some were shared across the organization.
-  </p>
-
-  <div class="info-box">
-    <h4>A Note on Samples</h4>
-    <p>
-      These tools were built for internal AWS workflows and are not available for external
-      demonstration. What I can share is how they worked, the problems they solved, and the
-      measurable impact they had. The experience I gained building these systems has only
-      deepened since&mdash;I continue to explore and build with new AI capabilities as they emerge.
-    </p>
-  </div>
-
-  <h2 id="training">AI Training Courses</h2>
-  <p>
-    Beyond building tools, I created and taught AI training courses for AWS employees
-    for major AI initiatives:
-  </p>
-  <ul>
-    <li><strong>Prompt engineering fundamentals:</strong> How to write effective prompts
-    for documentation tasks and when and how to implement RAG</li>
-    <li><strong>Tool development:</strong> Building custom AI workflows for specific
-    use cases</li>
-    <li><strong>Best practices:</strong> Quality control, fact-checking, and maintaining
-    accuracy when using AI assistance</li>
-  </ul>
-
-  <div class="info-box success">
-    <h4>Training Impact</h4>
-    <p>
-      Post-course surveys showed <strong>80%+ adoption rates</strong> of the techniques
-      taught, with participants reporting <strong>30%+ productivity gains</strong> in
-      their workflows.
-    </p>
-  </div>
-
-  <h2 id="projects">Projects</h2>
-  <p>
-    The following projects demonstrate different aspects of AI-powered tool development,
-    from multi-stage pipelines to agentic systems:
-  </p>
-
   <div class="samples-grid">
-    <a href="{{ '/samples/unbias-ai.html' | relative_url }}" class="sample-card">
-      <h3>Unbias AI</h3>
+    <a href="{{ '/at-aws.html' | relative_url }}" class="sample-card">
+      <h3>At AWS</h3>
       <p>
-        A civic education platform with eight AI-powered tools to surface perspective gaps,
-        decode spin, and find common ground&mdash;built and used personally to understand
-        where my understanding differed from others'.
+        AI-powered systems built for internal AWS engineering workflows&mdash;multi-stage
+        drafting pipelines, agentic ticket resolution, and promotion documentation
+        tools using Claude, MCP Protocol, and Python.
       </p>
-      <span class="card-link">View project &rarr;</span>
+      <span class="card-link">View projects &rarr;</span>
     </a>
 
-    <a href="{{ '/samples/airbyte-dev-adv.html' | relative_url }}" class="sample-card">
-      <h3>Airbyte Issue Analyst</h3>
+    <a href="{{ '/personal-ai-tools.html' | relative_url }}" class="sample-card">
+      <h3>Personal</h3>
       <p>
-        A 2-day interview project: an end-to-end AI pipeline using PyAirbyte, DuckDB, and
-        Claude to ingest GitHub issues, extract structured developer advocacy signal, and
-        expose a natural language Q&amp;A agent via Streamlit.
+        Full-stack AI tools built independently&mdash;from a civic education platform
+        (Next.js, Supabase, Vercel, Stripe) to an AI-powered developer advocacy pipeline
+        (PyAirbyte, DuckDB, Claude, Streamlit).
       </p>
-      <span class="card-link">View project &rarr;</span>
+      <span class="card-link">View projects &rarr;</span>
     </a>
-
-    <a href="{{ '/samples/ai-drafting-pipeline.html' | relative_url }}" class="sample-card">
-      <h3>Multi-Stage AI Drafting Pipeline</h3>
-      <p>
-        A multi-stage AI pipeline using LLMs and MCP that automated content drafting
-        from initial draft through post-review revisions with built-in fact-checking.
-      </p>
-      <span class="card-link">View project &rarr;</span>
-    </a>
-
-    <a href="{{ '/samples/ai-ticket-resolution.html' | relative_url }}" class="sample-card">
-      <h3>Agentic Ticket Resolution System</h3>
-      <p>
-        An agentic system that automated ticket analysis and resolution&mdash;parsing
-        requests, navigating codebases, and generating targeted fixes.
-      </p>
-      <span class="card-link">View project &rarr;</span>
-    </a>
-
-    <a href="{{ '/samples/ai-promotion-assistant.html' | relative_url }}" class="sample-card">
-      <h3>Promotion Documentation Assistant</h3>
-      <p>
-        A personal productivity tool that synthesizes accomplishments into structured
-        STAR-format narratives for performance review documentation.
-      </p>
-      <span class="card-link">View project &rarr;</span>
-    </a>
-  </div>
-
-  <h2 id="skills">Technical Skills Demonstrated</h2>
-  <p>Building these tools required combining multiple skill sets:</p>
-  <ul>
-    <li><strong>LLM Integration:</strong> Which foundation models for which purposes, prompt engineering, context management</li>
-    <li><strong>MCP Protocol:</strong> Using tools that extend LLM capabilities</li>
-    <li><strong>Python Development:</strong> Automation scripts, API integrations, file processing</li>
-    <li><strong>Workflow Design:</strong> Multi-stage pipelines with error handling and human-in-the-loop checkpoints</li>
-    <li><strong>Domain Expertise:</strong> Understanding end-user needs and content quality standards to design effective AI-assisted workflows</li>
-  </ul>
-
-  <div class="info-box">
-    <h4>Continuing to Build</h4>
-    <p>
-      The AI landscape evolves rapidly, and so does my toolkit. I continue to experiment
-      with new capabilities&mdash;from improved reasoning models to multi-agent architectures&mdash;
-      always looking for ways to make knowledge workflows more efficient and effective.
-    </p>
   </div>
 </article>

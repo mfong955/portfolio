@@ -1,0 +1,147 @@
+---
+layout: default
+title: Personal AI Projects | Matthew Fong
+description: Full-stack AI tools built independently — a civic education platform on Next.js, Supabase, Vercel, and Stripe; and an AI-powered developer advocacy pipeline using PyAirbyte, DuckDB, Claude, and Streamlit.
+---
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Personal AI Projects</h1>
+    <p class="lead">
+      AI tools I built independently&mdash;owning every layer of the stack, from database
+      schema and backend APIs to deployment pipelines and payment integration. Each project
+      started with a real problem and shipped as working software.
+    </p>
+  </div>
+</section>
+
+<article class="page-content">
+  <div class="sample-meta">
+    <div class="meta-item">
+      <span class="meta-label">Built with:</span>
+      <span>Next.js, React, Supabase, Vercel, Stripe, PyAirbyte, DuckDB, Claude API, Streamlit, Python</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context:</span>
+      <span>Independent, self-directed projects</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Audience:</span>
+      <span>Public-facing and open source</span>
+    </div>
+  </div>
+
+  <h2 id="context">About These Projects</h2>
+  <p>
+    These tools were built without a team, a platform team, or pre-existing infrastructure.
+    That means every decision&mdash;which database, how to handle auth, how to structure the
+    AI calls, how to deploy, how to accept payments&mdash;was mine to make and mine to implement.
+  </p>
+  <p>
+    That kind of ownership is directly relevant to developer advocacy, solutions engineering,
+    and DevRel work: understanding a developer's full integration surface requires having
+    navigated it yourself. I've worked with managed auth, relational databases, edge deployment,
+    payment APIs, AI APIs, data connectors, and local data stores&mdash;as a builder, not just
+    as a reader of documentation.
+  </p>
+
+  <div class="info-box highlight">
+    <h4>Why This Matters for DevRel &amp; Solutions Engineering</h4>
+    <p>
+      When I explain how a product integrates, I'm drawing on the experience of having
+      actually integrated it. These projects demonstrate comfort with the full developer
+      journey: choosing a stack, reading API docs, hitting real endpoints, debugging
+      integration issues, and shipping to production.
+    </p>
+  </div>
+
+  <h2 id="projects">Projects</h2>
+
+  <div class="samples-grid">
+    <a href="{{ '/samples/unbias-ai.html' | relative_url }}" class="sample-card">
+      <h3>Unbias AI</h3>
+      <p>
+        A civic education platform with eight AI-powered tools to surface perspective gaps,
+        decode spin, and find common ground. Built and deployed as a production web app.
+      </p>
+      <div class="card-stack">
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Supabase</span>
+        <span class="stack-tag">Vercel</span>
+        <span class="stack-tag">Stripe</span>
+        <span class="stack-tag">Claude API</span>
+      </div>
+      <span class="card-link">View project &rarr;</span>
+    </a>
+
+    <a href="{{ '/samples/airbyte-dev-adv.html' | relative_url }}" class="sample-card">
+      <h3>Airbyte Issue Analyst</h3>
+      <p>
+        An end-to-end AI pipeline that ingests GitHub issues via PyAirbyte, enriches them
+        with Claude, and exposes a natural language Q&amp;A agent via Streamlit. Built in 2 days
+        as a late-round interview project for Airbyte.
+      </p>
+      <div class="card-stack">
+        <span class="stack-tag">PyAirbyte</span>
+        <span class="stack-tag">DuckDB</span>
+        <span class="stack-tag">Claude API</span>
+        <span class="stack-tag">Streamlit</span>
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">Python</span>
+      </div>
+      <span class="card-link">View project &rarr;</span>
+    </a>
+  </div>
+
+  <h2 id="stacks">Full Stack Breakdown</h2>
+  <p>
+    Across these two projects, the full stack spans frontend frameworks, managed backend
+    services, AI APIs, data infrastructure, and deployment pipelines:
+  </p>
+
+  <h3>Unbias AI</h3>
+  <ul>
+    <li><strong>Next.js + React:</strong> Full-stack web framework handling routing, server-side rendering, and API routes&mdash;single codebase for frontend and backend logic</li>
+    <li><strong>Tailwind CSS:</strong> Utility-first styling, enabling rapid UI iteration without a design system</li>
+    <li><strong>Supabase:</strong> Managed PostgreSQL database with built-in auth&mdash;handling user accounts, session management, and data persistence without standing up a backend server</li>
+    <li><strong>Vercel:</strong> Edge deployment with CI/CD on every push&mdash;preview deployments, environment variable management, and global CDN out of the box</li>
+    <li><strong>Stripe:</strong> Payment integration for subscription management&mdash;webhooks, customer portal, and billing lifecycle</li>
+    <li><strong>Claude API:</strong> Powers all eight AI tools&mdash;structured prompting across different task types (debate, analysis, policy modeling, content generation)</li>
+  </ul>
+
+  <h3>Airbyte Issue Analyst</h3>
+  <ul>
+    <li><strong>PyAirbyte:</strong> Production <code>source-github</code> connector (Docker-backed) ingesting live issues from <code>airbytehq/airbyte</code>&mdash;no mocked data</li>
+    <li><strong>DuckDB:</strong> Embedded analytical database persisted to disk&mdash;stores raw issues and Claude-enriched analysis, queryable via SQL</li>
+    <li><strong>Claude API:</strong> Two distinct usage patterns: batch structured extraction (JSON enrichment per issue) and conversational text-to-SQL (two-call agent for Q&amp;A)</li>
+    <li><strong>Streamlit:</strong> Rapid demo UI with interactive dashboard, bar chart drill-down, and natural language query interface</li>
+    <li><strong>Docker:</strong> Required by PyAirbyte's connector runtime&mdash;managed as a dependency of the ingest pipeline</li>
+    <li><strong>Python 3.11+:</strong> Orchestration, pipeline logic, and agent implementation across ingest, enrichment, and query layers</li>
+  </ul>
+
+  <h2 id="skills">Technical Skills Demonstrated</h2>
+  <p>
+    Together, these projects demonstrate the ability to evaluate, integrate, and ship with
+    the tools developers actually use&mdash;a core requirement for DevRel, solutions engineering,
+    and developer advocacy roles:
+  </p>
+  <ul>
+    <li><strong>Full-stack ownership:</strong> Frontend, backend, database, deployment, and payments&mdash;without a platform team</li>
+    <li><strong>API integration:</strong> Working with managed services (Supabase, Stripe, Vercel) and AI APIs (Claude) as first-class integrations, not just SDKs</li>
+    <li><strong>Data pipeline design:</strong> Source connectors, local storage, enrichment pipelines, and queryable outputs&mdash;end-to-end</li>
+    <li><strong>AI API patterns:</strong> Structured extraction, few-shot prompting, text-to-SQL agents, and multi-tool orchestration across different task types</li>
+    <li><strong>Open source ecosystem literacy:</strong> Understanding Airbyte's connector architecture well enough to build on top of it and demonstrate its value</li>
+    <li><strong>Rapid prototyping:</strong> Working software from concept to demo in days&mdash;the pace required for conference demos, proof-of-concepts, and interview assignments</li>
+    <li><strong>Developer empathy:</strong> Both tools were built to solve real problems, with real data&mdash;no toy datasets, no mocked APIs</li>
+  </ul>
+
+  <div class="info-box">
+    <h4>Source Code</h4>
+    <p>
+      The Airbyte Issue Analyst is fully open source at
+      <a href="https://github.com/mfong955/aibyte-dev-adv" target="_blank" rel="noopener">github.com/mfong955/aibyte-dev-adv</a>.
+      Unbias AI is live at <a href="https://unbias-ai.com" target="_blank" rel="noopener">unbias-ai.com</a>.
+    </p>
+  </div>
+</article>
